@@ -52,6 +52,7 @@ CREATE TABLE [Unit] (
 GO
 CREATE TABLE [Driver] (
 	id int identity primary key,
+	idCard char(12),
 	name nvarchar(50) NOT NULL,
 	phone nvarchar(10) NOT NULL,
 	unitId integer NOT NULL,
@@ -62,6 +63,7 @@ CREATE TABLE [History] (
 	fromUnitId int NOT NULL,
 	toUnitId int NOT NULL,
 	tankId int NOT NULL,
+	date date NOT NULL,
 )
 GO
 CREATE TABLE [TankDriver] (
