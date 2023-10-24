@@ -9,79 +9,79 @@ GO
 
 CREATE TABLE [Tank] (
 	id int identity primary key,
-	modelId int NOT NULL,
-	manufactoryId int NOT NULL,
-	unitId int NOT NULL,
+	modelId int,
+	manufactoryId int,
+	unitId int,
 )
 GO
 CREATE TABLE [Manufactory] (
 	id int identity primary key,
-	name nvarchar(50) NOT NULL,
-	locationId int NOT NULL,
+	name nvarchar(50),
+	locationId int,
 )
 GO
 CREATE TABLE [Location] (
 	id int identity primary key,
-	name nvarchar(50) NOT NULL,
+	name nvarchar(50),
 )
 GO
 CREATE TABLE [Model] (
 	id int identity primary key,
-	weight int NOT NULL,
-	maxSpeed int NOT NULL,
-	detail nvarchar(255) NOT NULL,
-	maxNoDriver int NOT NULL,
-	ammoId int NOT NULL,
-	price int NOT NULL,
-	name nvarchar NOT NULL,
-	shootingRange int NOT NULL,
+	weight int,
+	maxSpeed int,
+	detail nvarchar(255),
+	maxNoDriver int,
+	ammoId int,
+	price int,
+	name nvarchar,
+	shootingRange int,
 )
 GO
 CREATE TABLE [Ammo] (
 	id int identity primary key,
-	name nvarchar(50) NOT NULL,
-	price int NOT NULL,
-	weight int NOT NULL,
+	name nvarchar(50),
+	price int,
+	weight int,
 )
 GO
 CREATE TABLE [Unit] (
 	id int identity primary key,
-	name nvarchar(50) NOT NULL,
-	location nvarchar(50) NOT NULL,
+	name nvarchar(50),
+	location nvarchar(50),
 )
 GO
 CREATE TABLE [Driver] (
 	id int identity primary key,
 	idCard char(12),
-	name nvarchar(50) NOT NULL,
-	phone nvarchar(10) NOT NULL,
-	unitId integer NOT NULL,
+	name nvarchar(50),
+	phone nvarchar(10),
+	unitId integer,
 )
 GO
 CREATE TABLE [History] (
 	id int identity primary key,
-	fromUnitId int NOT NULL,
-	toUnitId int NOT NULL,
-	tankId int NOT NULL,
-	date date NOT NULL,
+	fromUnitId int,
+	toUnitId int,
+	tankId int,
+	date date,
 )
 GO
 CREATE TABLE [TankDriver] (
 	id int identity primary key,
-	tankId int NOT NULL,
-	driverId int NOT NULL,
+	tankId int,
+	driverId int,
 )
 GO
 CREATE TABLE [Role] (
 	id int identity primary key,
-	description char(2) NOT NULL,
+	description char(2),
 )
 GO
 CREATE TABLE [User] (
 	id int identity primary key,
-	username varchar(20) NOT NULL,
-	password varchar(20) NOT NULL,
-	roleId int NOT NULL,
+	username varchar(20),
+	password varchar(20),
+	roleId int,
 )
 GO
 ALTER TABLE [Tank] WITH CHECK ADD CONSTRAINT [Tank_fk0] FOREIGN KEY ([modelId]) REFERENCES [Model]([id])
