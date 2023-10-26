@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tank-Management", "Tank-Management.csproj", "{AA1C9EC2-B2A8-4E1A-BAF4-15725DB77FA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "..\Data\Data.csproj", "{AEE0C06A-A33B-4763-BD58-A941BD26001E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA1C9EC2-B2A8-4E1A-BAF4-15725DB77FA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA1C9EC2-B2A8-4E1A-BAF4-15725DB77FA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA1C9EC2-B2A8-4E1A-BAF4-15725DB77FA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA1C9EC2-B2A8-4E1A-BAF4-15725DB77FA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEE0C06A-A33B-4763-BD58-A941BD26001E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEE0C06A-A33B-4763-BD58-A941BD26001E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEE0C06A-A33B-4763-BD58-A941BD26001E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEE0C06A-A33B-4763-BD58-A941BD26001E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7BA1E19C-D4B8-4CCD-80F5-1F67292921E2}
+	EndGlobalSection
+EndGlobal
