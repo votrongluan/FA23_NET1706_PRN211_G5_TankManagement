@@ -1,3 +1,4 @@
+using Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -5,6 +6,8 @@ namespace Tank_Management
 {
     internal static class Program
     {
+        public static User user = new User();
+
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -14,7 +17,7 @@ namespace Tank_Management
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new Login());
         }
     }
 }

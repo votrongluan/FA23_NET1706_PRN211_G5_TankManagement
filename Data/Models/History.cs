@@ -7,15 +7,17 @@ public partial class History
 {
     public int Id { get; set; }
 
-    public int FromUnitId { get; set; }
+    public int? FromUnitId { get; set; }
 
-    public int ToUnitId { get; set; }
+    public int? ToUnitId { get; set; }
 
-    public int TankId { get; set; }
+    public int? TankId { get; set; }
 
-    public virtual Unit FromUnit { get; set; } = null!;
+    public DateTime? Date { get; set; }
 
-    public virtual Tank Tank { get; set; } = null!;
+    public virtual Unit FromUnit { get; set; }
 
-    public virtual Unit ToUnit { get; set; } = null!;
+    public virtual Tank Tank { get; set; }
+
+    public virtual Unit ToUnit { get; set; }
 }
