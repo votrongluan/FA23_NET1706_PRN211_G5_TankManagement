@@ -7,11 +7,11 @@ public partial class TankDriver
 {
     public int Id { get; set; }
 
-    public int TankId { get; set; }
+    public int? TankId { get; set; }
 
-    public int DriverId { get; set; }
+    public int? DriverId { get; set; }
 
-    public virtual Driver Driver { get; set; } = null!;
+    public virtual Driver Driver { get; set; }
 
-    public virtual Tank Tank { get; set; } = null!;
+    public virtual Tank Tank { get; set; }
 }

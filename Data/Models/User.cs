@@ -7,11 +7,13 @@ public partial class User
 {
     public int Id { get; set; }
 
-    public string Username { get; set; } = null!;
+    public string Username { get; set; }
 
-    public string Password { get; set; } = null!;
+    public string Password { get; set; }
 
-    public int RoleId { get; set; }
+    public int? RoleId { get; set; }
 
-    public virtual Role Role { get; set; } = null!;
+    public virtual Role Role { get; set; }
+
+    public virtual ICollection<UnitManager> UnitManagers { get; set; } = new List<UnitManager>();
 }

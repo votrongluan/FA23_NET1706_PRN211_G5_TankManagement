@@ -35,17 +35,19 @@ public partial class TmContext : DbContext
 
     public virtual DbSet<Unit> Units { get; set; }
 
+    public virtual DbSet<UnitManager> UnitManagers { get; set; }
+
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("server =(local); database= TM; uid=sa;pwd=12345; TrustServerCertificate=True");
+        => optionsBuilder.UseSqlServer("Server=Luan\\LUAN;uid=sa;pwd=12345;database= TM;TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Ammo>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Ammo__3213E83F6B235A11");
+            entity.HasKey(e => e.Id).HasName("PK__Ammo__3213E83F542863E7");
 
             entity.ToTable("Ammo");
 
@@ -59,11 +61,16 @@ public partial class TmContext : DbContext
 
         modelBuilder.Entity<Driver>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Driver__3213E83FB6B46015");
+            entity.HasKey(e => e.Id).HasName("PK__Driver__3213E83FB738EDDE");
 
             entity.ToTable("Driver");
 
             entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.IdCard)
+                .HasMaxLength(12)
+                .IsUnicode(false)
+                .IsFixedLength()
+                .HasColumnName("idCard");
             entity.Property(e => e.Name)
                 .HasMaxLength(50)
                 .HasColumnName("name");
@@ -74,40 +81,39 @@ public partial class TmContext : DbContext
 
             entity.HasOne(d => d.Unit).WithMany(p => p.Drivers)
                 .HasForeignKey(d => d.UnitId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("Driver_fk0");
         });
 
         modelBuilder.Entity<History>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__History__3213E83F1DA77C54");
+            entity.HasKey(e => e.Id).HasName("PK__History__3213E83F7C86B5CA");
 
             entity.ToTable("History");
 
             entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Date)
+                .HasColumnType("date")
+                .HasColumnName("date");
             entity.Property(e => e.FromUnitId).HasColumnName("fromUnitId");
             entity.Property(e => e.TankId).HasColumnName("tankId");
             entity.Property(e => e.ToUnitId).HasColumnName("toUnitId");
 
             entity.HasOne(d => d.FromUnit).WithMany(p => p.HistoryFromUnits)
                 .HasForeignKey(d => d.FromUnitId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("History_fk0");
 
             entity.HasOne(d => d.Tank).WithMany(p => p.Histories)
                 .HasForeignKey(d => d.TankId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("History_fk2");
 
             entity.HasOne(d => d.ToUnit).WithMany(p => p.HistoryToUnits)
                 .HasForeignKey(d => d.ToUnitId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("History_fk1");
         });
 
         modelBuilder.Entity<Location>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Location__3213E83FE0417073");
+            entity.HasKey(e => e.Id).HasName("PK__Location__3213E83F8269623B");
 
             entity.ToTable("Location");
 
@@ -119,7 +125,7 @@ public partial class TmContext : DbContext
 
         modelBuilder.Entity<Manufactory>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Manufact__3213E83FB082691D");
+            entity.HasKey(e => e.Id).HasName("PK__Manufact__3213E83F106B0F0B");
 
             entity.ToTable("Manufactory");
 
@@ -131,13 +137,12 @@ public partial class TmContext : DbContext
 
             entity.HasOne(d => d.Location).WithMany(p => p.Manufactories)
                 .HasForeignKey(d => d.LocationId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("Manufactory_fk0");
         });
 
         modelBuilder.Entity<Model>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Model__3213E83FDDF67A9B");
+            entity.HasKey(e => e.Id).HasName("PK__Model__3213E83FBD6E6E1C");
 
             entity.ToTable("Model");
 
@@ -149,7 +154,7 @@ public partial class TmContext : DbContext
             entity.Property(e => e.MaxNoDriver).HasColumnName("maxNoDriver");
             entity.Property(e => e.MaxSpeed).HasColumnName("maxSpeed");
             entity.Property(e => e.Name)
-                .HasMaxLength(1)
+                .HasMaxLength(50)
                 .HasColumnName("name");
             entity.Property(e => e.Price).HasColumnName("price");
             entity.Property(e => e.ShootingRange).HasColumnName("shootingRange");
@@ -157,13 +162,12 @@ public partial class TmContext : DbContext
 
             entity.HasOne(d => d.Ammo).WithMany(p => p.Models)
                 .HasForeignKey(d => d.AmmoId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("Model_fk0");
         });
 
         modelBuilder.Entity<Role>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Role__3213E83F9C25E8BA");
+            entity.HasKey(e => e.Id).HasName("PK__Role__3213E83F0716005F");
 
             entity.ToTable("Role");
 
@@ -177,7 +181,7 @@ public partial class TmContext : DbContext
 
         modelBuilder.Entity<Tank>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Tank__3213E83F81282D56");
+            entity.HasKey(e => e.Id).HasName("PK__Tank__3213E83F3E9AF16C");
 
             entity.ToTable("Tank");
 
@@ -188,23 +192,20 @@ public partial class TmContext : DbContext
 
             entity.HasOne(d => d.Manufactory).WithMany(p => p.Tanks)
                 .HasForeignKey(d => d.ManufactoryId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("Tank_fk1");
 
             entity.HasOne(d => d.Model).WithMany(p => p.Tanks)
                 .HasForeignKey(d => d.ModelId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("Tank_fk0");
 
             entity.HasOne(d => d.Unit).WithMany(p => p.Tanks)
                 .HasForeignKey(d => d.UnitId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("Tank_fk2");
         });
 
         modelBuilder.Entity<TankDriver>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__TankDriv__3213E83F57A554E2");
+            entity.HasKey(e => e.Id).HasName("PK__TankDriv__3213E83FCBA6E13A");
 
             entity.ToTable("TankDriver");
 
@@ -214,18 +215,16 @@ public partial class TmContext : DbContext
 
             entity.HasOne(d => d.Driver).WithMany(p => p.TankDrivers)
                 .HasForeignKey(d => d.DriverId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("TankDriver_fk1");
 
             entity.HasOne(d => d.Tank).WithMany(p => p.TankDrivers)
                 .HasForeignKey(d => d.TankId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("TankDriver_fk0");
         });
 
         modelBuilder.Entity<Unit>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Unit__3213E83F27F00652");
+            entity.HasKey(e => e.Id).HasName("PK__Unit__3213E83F0EC97524");
 
             entity.ToTable("Unit");
 
@@ -238,9 +237,28 @@ public partial class TmContext : DbContext
                 .HasColumnName("name");
         });
 
+        modelBuilder.Entity<UnitManager>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__UnitMana__3213E83F5499F8A4");
+
+            entity.ToTable("UnitManager");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.UnitId).HasColumnName("unitId");
+            entity.Property(e => e.UserId).HasColumnName("userId");
+
+            entity.HasOne(d => d.Unit).WithMany(p => p.UnitManagers)
+                .HasForeignKey(d => d.UnitId)
+                .HasConstraintName("UnitManager_fk1");
+
+            entity.HasOne(d => d.User).WithMany(p => p.UnitManagers)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("UnitManager_fk0");
+        });
+
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__User__3213E83F14B63804");
+            entity.HasKey(e => e.Id).HasName("PK__User__3213E83F0B9D60AD");
 
             entity.ToTable("User");
 
@@ -257,7 +275,6 @@ public partial class TmContext : DbContext
 
             entity.HasOne(d => d.Role).WithMany(p => p.Users)
                 .HasForeignKey(d => d.RoleId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("User_fk0");
         });
 
