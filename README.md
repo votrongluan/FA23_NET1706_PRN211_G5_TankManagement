@@ -22,28 +22,26 @@ Khi nào muốn pull thì vào [https://github.com/votrongluan/tank-management-w
 
 `Lưu ý: Mọi người nhớ bỏ nút log out vô dashboard form, nút quay lại dashboard trong các form không phải dashboard`
 
-Login Form (1 form) (Phong)
+- [ ] Login Form (Phong)
 
 ### Manger
 
-- Manager Dashboard Form (Phúc)
+- [x] Manager Dashboard Form (Luân)
 
-- Manage Model (Quang)
+- [ ] Manage Model (Quang)
 
-- Manage Ammo (Anh)
+- [ ] Manage Ammo (Anh)
 
-- Manage Manufactory  (Anh)
+- [ ] Manage Manufactory  (Anh)
 
-- Manage Tank (Phúc)
+- [ ] Manage Tank (Phúc)
 
 ### User
 
-- User Dashboard Form (Luân)
+- [x] User Dashboard Form (Luân)
 
-- Manage Driver (Nam)
+- [ ] Manage Driver (Nam)
 
-- View history (Phong)
+- [ ] View history (Phong)
 
-- Change tank unit (Luân)
-
-
+- [x] Change tank unit (Luân)
