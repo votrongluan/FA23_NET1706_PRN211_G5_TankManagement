@@ -15,6 +15,7 @@ namespace Tank_Management {
         public UserRepository userRepository;
         public RoleRepository roleRepostiry = new RoleRepository();
         public Login() {
+            this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
         }
 
@@ -34,10 +35,14 @@ namespace Tank_Management {
                     var adminDasboard = new AdminDashboard();
                     adminDasboard.Show();
                     this.Hide();
+                } else
+                {
+                    var userDashboard = new UserDashboard();
+                    userDashboard.Show();
+                    this.Hide();
                 }
-
             } else {
-                MessageBox.Show("Login fail");
+                MessageBox.Show("Username or password is incorrect!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -39,6 +39,7 @@
             // 
             // btnManageManufactory
             // 
+            btnManageManufactory.Cursor = Cursors.Hand;
             btnManageManufactory.Location = new Point(185, 277);
             btnManageManufactory.Name = "btnManageManufactory";
             btnManageManufactory.Size = new Size(468, 46);
@@ -49,6 +50,7 @@
             // 
             // btnManageAmmo
             // 
+            btnManageAmmo.Cursor = Cursors.Hand;
             btnManageAmmo.Location = new Point(185, 205);
             btnManageAmmo.Name = "btnManageAmmo";
             btnManageAmmo.Size = new Size(468, 46);
@@ -59,6 +61,7 @@
             // 
             // btnManageModel
             // 
+            btnManageModel.Cursor = Cursors.Hand;
             btnManageModel.Location = new Point(185, 129);
             btnManageModel.Name = "btnManageModel";
             btnManageModel.Size = new Size(468, 46);
@@ -70,6 +73,7 @@
             // btnLogout
             // 
             btnLogout.BackColor = Color.FromArgb(255, 255, 192);
+            btnLogout.Cursor = Cursors.Hand;
             btnLogout.Location = new Point(185, 501);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(468, 46);
@@ -90,6 +94,7 @@
             // 
             // btnManageTank
             // 
+            btnManageTank.Cursor = Cursors.Hand;
             btnManageTank.Location = new Point(185, 352);
             btnManageTank.Name = "btnManageTank";
             btnManageTank.Size = new Size(468, 46);
@@ -100,6 +105,7 @@
             // 
             // btnViewHistory
             // 
+            btnViewHistory.Cursor = Cursors.Hand;
             btnViewHistory.Location = new Point(185, 427);
             btnViewHistory.Name = "btnViewHistory";
             btnViewHistory.Size = new Size(468, 46);
