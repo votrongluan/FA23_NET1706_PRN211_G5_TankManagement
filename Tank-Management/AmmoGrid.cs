@@ -15,6 +15,7 @@ namespace Tank_Management
         public AmmoGrid()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
     }
 }

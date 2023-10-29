@@ -42,7 +42,6 @@ namespace Tank_Management {
 
         public HistoryGrid() {
             InitializeComponent();
-
             updateGridView();
         }
 
@@ -50,6 +49,7 @@ namespace Tank_Management {
             UserDashboard userDashboard = new UserDashboard();
             userDashboard.Show();
             this.Hide();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
     }
 }
