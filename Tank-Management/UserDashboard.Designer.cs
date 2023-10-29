@@ -28,12 +28,86 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "UserDashboard";
+            label1 = new Label();
+            btnLogout = new Button();
+            btnManageDriver = new Button();
+            btnViewTankHistory = new Button();
+            btnChangeUnit = new Button();
+            SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 19.875F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(207, 32);
+            label1.Name = "label1";
+            label1.Size = new Size(416, 71);
+            label1.TabIndex = 0;
+            label1.Text = "User Dashboard";
+            // 
+            // btnLogout
+            // 
+            btnLogout.BackColor = Color.FromArgb(255, 255, 192);
+            btnLogout.Location = new Point(207, 354);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(416, 46);
+            btnLogout.TabIndex = 1;
+            btnLogout.Text = "Logout";
+            btnLogout.UseVisualStyleBackColor = false;
+            btnLogout.Click += btnLogout_Click;
+            // 
+            // btnManageDriver
+            // 
+            btnManageDriver.Location = new Point(207, 135);
+            btnManageDriver.Name = "btnManageDriver";
+            btnManageDriver.Size = new Size(416, 46);
+            btnManageDriver.TabIndex = 2;
+            btnManageDriver.Text = "Manage Driver";
+            btnManageDriver.UseVisualStyleBackColor = true;
+            btnManageDriver.Click += btnManageDriver_Click;
+            // 
+            // btnViewTankHistory
+            // 
+            btnViewTankHistory.Location = new Point(207, 209);
+            btnViewTankHistory.Name = "btnViewTankHistory";
+            btnViewTankHistory.Size = new Size(416, 46);
+            btnViewTankHistory.TabIndex = 3;
+            btnViewTankHistory.Text = "View Tank History";
+            btnViewTankHistory.UseVisualStyleBackColor = true;
+            btnViewTankHistory.Click += btnViewTankHistory_Click;
+            // 
+            // btnChangeUnit
+            // 
+            btnChangeUnit.Location = new Point(207, 281);
+            btnChangeUnit.Name = "btnChangeUnit";
+            btnChangeUnit.Size = new Size(416, 46);
+            btnChangeUnit.TabIndex = 4;
+            btnChangeUnit.Text = "Change Tank Unit";
+            btnChangeUnit.UseVisualStyleBackColor = true;
+            btnChangeUnit.Click += btnChangeUnit_Click;
+            // 
+            // UserDashboard
+            // 
+            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnChangeUnit);
+            Controls.Add(btnViewTankHistory);
+            Controls.Add(btnManageDriver);
+            Controls.Add(btnLogout);
+            Controls.Add(label1);
+            Name = "UserDashboard";
+            Text = "UserDashboard";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
+        private Button btnLogout;
+        private Button btnManageDriver;
+        private Button btnViewTankHistory;
+        private Button btnChangeUnit;
     }
 }
