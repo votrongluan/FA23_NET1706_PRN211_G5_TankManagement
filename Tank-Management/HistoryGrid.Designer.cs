@@ -32,7 +32,7 @@
             // lbHistory
             // 
             lbHistory.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            lbHistory.BackColor = SystemColors.ActiveCaption;
+            lbHistory.BackColor = Color.Transparent;
             lbHistory.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             lbHistory.Location = new Point(318, 43);
             lbHistory.Name = "lbHistory";
@@ -44,9 +44,10 @@
             // button1
             // 
             button1.Anchor = AnchorStyles.Bottom;
-            button1.Location = new Point(380, 425);
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(350, 440);
             button1.Name = "button1";
-            button1.Size = new Size(160, 44);
+            button1.Size = new Size(197, 64);
             button1.TabIndex = 2;
             button1.Text = "Back to dashboard";
             button1.UseVisualStyleBackColor = true;
