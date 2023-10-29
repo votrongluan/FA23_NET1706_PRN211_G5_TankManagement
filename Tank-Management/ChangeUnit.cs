@@ -79,8 +79,6 @@ namespace Tank_Management
             LoadUnit();
         }
 
-
-
         private void btnChange_Click(object sender, EventArgs e)
         {
             try

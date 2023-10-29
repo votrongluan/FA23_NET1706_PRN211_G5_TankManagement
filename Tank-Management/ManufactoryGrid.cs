@@ -15,6 +15,7 @@ namespace Tank_Management
         public ManufactoryGrid()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
     }
 }

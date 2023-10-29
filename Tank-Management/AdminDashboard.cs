@@ -15,6 +15,7 @@ namespace Tank_Management
         public AdminDashboard()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -57,6 +58,13 @@ namespace Tank_Management
         {
             var historyGrid = new HistoryGrid();
             historyGrid.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var manageDriver = new DriverGrid();
+            manageDriver.Show();
             this.Hide();
         }
     }

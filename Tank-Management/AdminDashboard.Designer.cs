@@ -35,6 +35,7 @@
             label1 = new Label();
             btnManageTank = new Button();
             btnViewHistory = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // btnManageManufactory
@@ -74,7 +75,7 @@
             // 
             btnLogout.BackColor = Color.FromArgb(255, 255, 192);
             btnLogout.Cursor = Cursors.Hand;
-            btnLogout.Location = new Point(185, 501);
+            btnLogout.Location = new Point(185, 576);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(468, 46);
             btnLogout.TabIndex = 6;
@@ -106,7 +107,7 @@
             // btnViewHistory
             // 
             btnViewHistory.Cursor = Cursors.Hand;
-            btnViewHistory.Location = new Point(185, 427);
+            btnViewHistory.Location = new Point(185, 506);
             btnViewHistory.Name = "btnViewHistory";
             btnViewHistory.Size = new Size(468, 46);
             btnViewHistory.TabIndex = 11;
@@ -114,11 +115,23 @@
             btnViewHistory.UseVisualStyleBackColor = true;
             btnViewHistory.Click += btnViewHistory_Click;
             // 
+            // button1
+            // 
+            button1.Cursor = Cursors.Hand;
+            button1.Location = new Point(185, 431);
+            button1.Name = "button1";
+            button1.Size = new Size(468, 46);
+            button1.TabIndex = 12;
+            button1.Text = "Mange Driver";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // AdminDashboard
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 604);
+            ClientSize = new Size(800, 659);
+            Controls.Add(button1);
             Controls.Add(btnViewHistory);
             Controls.Add(btnManageTank);
             Controls.Add(btnManageManufactory);
@@ -141,5 +154,6 @@
         private Label label1;
         private Button btnManageTank;
         private Button btnViewHistory;
+        private Button button1;
     }
 }

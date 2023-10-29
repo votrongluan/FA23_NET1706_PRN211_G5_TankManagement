@@ -47,7 +47,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 19.875F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(560, 20);
+            label1.Location = new Point(701, 20);
             label1.Name = "label1";
             label1.Size = new Size(329, 71);
             label1.TabIndex = 1;
@@ -62,14 +62,14 @@
             dgvTank.ReadOnly = true;
             dgvTank.RowHeadersWidth = 82;
             dgvTank.RowTemplate.Height = 41;
-            dgvTank.Size = new Size(757, 578);
+            dgvTank.Size = new Size(1050, 578);
             dgvTank.TabIndex = 2;
             dgvTank.CellDoubleClick += dgvTank_CellDoubleClick;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(834, 243);
+            label2.Location = new Point(1111, 243);
             label2.Name = "label2";
             label2.Size = new Size(176, 32);
             label2.TabIndex = 3;
@@ -78,7 +78,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(952, 305);
+            label3.Location = new Point(1229, 305);
             label3.Name = "label3";
             label3.Size = new Size(58, 32);
             label3.TabIndex = 4;
@@ -87,7 +87,7 @@
             // txtTankId
             // 
             txtTankId.Enabled = false;
-            txtTankId.Location = new Point(1040, 240);
+            txtTankId.Location = new Point(1317, 240);
             txtTankId.Name = "txtTankId";
             txtTankId.ReadOnly = true;
             txtTankId.Size = new Size(275, 39);
@@ -96,14 +96,14 @@
             // cbxUnitId
             // 
             cbxUnitId.FormattingEnabled = true;
-            cbxUnitId.Location = new Point(1040, 302);
+            cbxUnitId.Location = new Point(1317, 302);
             cbxUnitId.Name = "cbxUnitId";
             cbxUnitId.Size = new Size(275, 40);
             cbxUnitId.TabIndex = 6;
             // 
             // btnChange
             // 
-            btnChange.Location = new Point(1165, 384);
+            btnChange.Location = new Point(1442, 384);
             btnChange.Name = "btnChange";
             btnChange.Size = new Size(150, 46);
             btnChange.TabIndex = 7;
@@ -114,7 +114,7 @@
             // btnBack
             // 
             btnBack.BackColor = Color.FromArgb(255, 255, 192);
-            btnBack.Location = new Point(1023, 823);
+            btnBack.Location = new Point(1300, 823);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(292, 46);
             btnBack.TabIndex = 8;
@@ -136,12 +136,12 @@
             txtSearch.Location = new Point(156, 128);
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Find by id, model or manufactory";
-            txtSearch.Size = new Size(977, 39);
+            txtSearch.Size = new Size(1258, 39);
             txtSearch.TabIndex = 10;
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(1165, 124);
+            btnSearch.Location = new Point(1442, 124);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(150, 46);
             btnSearch.TabIndex = 11;
@@ -163,7 +163,7 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1351, 916);
+            ClientSize = new Size(1640, 916);
             Controls.Add(btnResetTankDgv);
             Controls.Add(btnSearch);
             Controls.Add(txtSearch);
