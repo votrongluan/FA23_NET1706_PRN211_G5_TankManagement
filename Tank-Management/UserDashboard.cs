@@ -14,8 +14,8 @@ namespace Tank_Management
     {
         public UserDashboard()
         {
-            Console.WriteLine("User Dashboard");
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void btnManageDriver_Click(object sender, EventArgs e)

@@ -48,6 +48,7 @@
             // btnLogout
             // 
             btnLogout.BackColor = Color.FromArgb(255, 255, 192);
+            btnLogout.Cursor = Cursors.Hand;
             btnLogout.Location = new Point(207, 354);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(416, 46);
@@ -58,6 +59,7 @@
             // 
             // btnManageDriver
             // 
+            btnManageDriver.Cursor = Cursors.Hand;
             btnManageDriver.Location = new Point(207, 135);
             btnManageDriver.Name = "btnManageDriver";
             btnManageDriver.Size = new Size(416, 46);
@@ -68,6 +70,7 @@
             // 
             // btnViewTankHistory
             // 
+            btnViewTankHistory.Cursor = Cursors.Hand;
             btnViewTankHistory.Location = new Point(207, 209);
             btnViewTankHistory.Name = "btnViewTankHistory";
             btnViewTankHistory.Size = new Size(416, 46);
@@ -78,6 +81,7 @@
             // 
             // btnChangeUnit
             // 
+            btnChangeUnit.Cursor = Cursors.Hand;
             btnChangeUnit.Location = new Point(207, 281);
             btnChangeUnit.Name = "btnChangeUnit";
             btnChangeUnit.Size = new Size(416, 46);

@@ -13,7 +13,7 @@ namespace Tank_Management
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new UserDashboard());
+            Application.Run(new Login());
         }
     }
 }
