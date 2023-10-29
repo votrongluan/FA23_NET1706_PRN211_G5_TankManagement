@@ -35,6 +35,7 @@
             label1 = new Label();
             btnManageTank = new Button();
             btnViewHistory = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // btnManageManufactory
@@ -121,6 +122,17 @@
             btnViewHistory.UseVisualStyleBackColor = true;
             btnViewHistory.Click += btnViewHistory_Click;
             // 
+            // button1
+            // 
+            button1.Cursor = Cursors.Hand;
+            button1.Location = new Point(185, 431);
+            button1.Name = "button1";
+            button1.Size = new Size(468, 46);
+            button1.TabIndex = 12;
+            button1.Text = "Mange Driver";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // AdminDashboard
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -150,5 +162,6 @@
         private Label label1;
         private Button btnManageTank;
         private Button btnViewHistory;
+        private Button button1;
     }
 }
