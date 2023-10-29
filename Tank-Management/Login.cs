@@ -17,6 +17,7 @@ namespace Tank_Management {
         public Login() {
             this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
+            lbLogin.BackColor = Color.Transparent;
         }
 
         private void btnLogin_Click(object sender, EventArgs e) {
@@ -35,8 +36,7 @@ namespace Tank_Management {
                     var adminDasboard = new AdminDashboard();
                     adminDasboard.Show();
                     this.Hide();
-                } else
-                {
+                } else {
                     var userDashboard = new UserDashboard();
                     userDashboard.Show();
                     this.Hide();
