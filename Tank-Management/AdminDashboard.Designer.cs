@@ -42,7 +42,7 @@
             // 
             btnManageManufactory.Cursor = Cursors.Hand;
             btnManageManufactory.Location = new Point(142, 216);
-            btnManageManufactory.Margin = new Padding(2, 2, 2, 2);
+            btnManageManufactory.Margin = new Padding(2);
             btnManageManufactory.Name = "btnManageManufactory";
             btnManageManufactory.Size = new Size(360, 36);
             btnManageManufactory.TabIndex = 9;
@@ -54,7 +54,7 @@
             // 
             btnManageAmmo.Cursor = Cursors.Hand;
             btnManageAmmo.Location = new Point(142, 160);
-            btnManageAmmo.Margin = new Padding(2, 2, 2, 2);
+            btnManageAmmo.Margin = new Padding(2);
             btnManageAmmo.Name = "btnManageAmmo";
             btnManageAmmo.Size = new Size(360, 36);
             btnManageAmmo.TabIndex = 8;
@@ -66,7 +66,7 @@
             // 
             btnManageModel.Cursor = Cursors.Hand;
             btnManageModel.Location = new Point(142, 101);
-            btnManageModel.Margin = new Padding(2, 2, 2, 2);
+            btnManageModel.Margin = new Padding(2);
             btnManageModel.Name = "btnManageModel";
             btnManageModel.Size = new Size(360, 36);
             btnManageModel.TabIndex = 7;
@@ -78,7 +78,7 @@
             // 
             btnLogout.BackColor = Color.FromArgb(255, 255, 192);
             btnLogout.Cursor = Cursors.Hand;
-            btnLogout.Location = new Point(185, 576);
+            btnLogout.Location = new Point(142, 457);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(360, 36);
             btnLogout.TabIndex = 6;
@@ -101,7 +101,7 @@
             // 
             btnManageTank.Cursor = Cursors.Hand;
             btnManageTank.Location = new Point(142, 275);
-            btnManageTank.Margin = new Padding(2, 2, 2, 2);
+            btnManageTank.Margin = new Padding(2);
             btnManageTank.Name = "btnManageTank";
             btnManageTank.Size = new Size(360, 36);
             btnManageTank.TabIndex = 10;
@@ -112,7 +112,7 @@
             // btnViewHistory
             // 
             btnViewHistory.Cursor = Cursors.Hand;
-            btnViewHistory.Location = new Point(185, 506);
+            btnViewHistory.Location = new Point(142, 395);
             btnViewHistory.Name = "btnViewHistory";
             btnViewHistory.Size = new Size(360, 36);
             btnViewHistory.TabIndex = 11;
@@ -123,9 +123,9 @@
             // button1
             // 
             button1.Cursor = Cursors.Hand;
-            button1.Location = new Point(185, 431);
+            button1.Location = new Point(142, 337);
             button1.Name = "button1";
-            button1.Size = new Size(468, 46);
+            button1.Size = new Size(360, 34);
             button1.TabIndex = 12;
             button1.Text = "Mange Driver";
             button1.UseVisualStyleBackColor = true;
@@ -135,7 +135,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 659);
+            ClientSize = new Size(651, 549);
             Controls.Add(button1);
             Controls.Add(btnViewHistory);
             Controls.Add(btnManageTank);
@@ -144,7 +144,7 @@
             Controls.Add(btnManageModel);
             Controls.Add(btnLogout);
             Controls.Add(label1);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "AdminDashboard";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminDashboard";
