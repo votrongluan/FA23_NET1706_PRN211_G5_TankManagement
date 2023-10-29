@@ -40,9 +40,10 @@
             // btnManageManufactory
             // 
             btnManageManufactory.Cursor = Cursors.Hand;
-            btnManageManufactory.Location = new Point(185, 277);
+            btnManageManufactory.Location = new Point(142, 216);
+            btnManageManufactory.Margin = new Padding(2, 2, 2, 2);
             btnManageManufactory.Name = "btnManageManufactory";
-            btnManageManufactory.Size = new Size(468, 46);
+            btnManageManufactory.Size = new Size(360, 36);
             btnManageManufactory.TabIndex = 9;
             btnManageManufactory.Text = "Mange Manufactory";
             btnManageManufactory.UseVisualStyleBackColor = true;
@@ -51,9 +52,10 @@
             // btnManageAmmo
             // 
             btnManageAmmo.Cursor = Cursors.Hand;
-            btnManageAmmo.Location = new Point(185, 205);
+            btnManageAmmo.Location = new Point(142, 160);
+            btnManageAmmo.Margin = new Padding(2, 2, 2, 2);
             btnManageAmmo.Name = "btnManageAmmo";
-            btnManageAmmo.Size = new Size(468, 46);
+            btnManageAmmo.Size = new Size(360, 36);
             btnManageAmmo.TabIndex = 8;
             btnManageAmmo.Text = "Manage Ammo";
             btnManageAmmo.UseVisualStyleBackColor = true;
@@ -62,9 +64,10 @@
             // btnManageModel
             // 
             btnManageModel.Cursor = Cursors.Hand;
-            btnManageModel.Location = new Point(185, 129);
+            btnManageModel.Location = new Point(142, 101);
+            btnManageModel.Margin = new Padding(2, 2, 2, 2);
             btnManageModel.Name = "btnManageModel";
-            btnManageModel.Size = new Size(468, 46);
+            btnManageModel.Size = new Size(360, 36);
             btnManageModel.TabIndex = 7;
             btnManageModel.Text = "Manage Model";
             btnManageModel.UseVisualStyleBackColor = true;
@@ -74,9 +77,10 @@
             // 
             btnLogout.BackColor = Color.FromArgb(255, 255, 192);
             btnLogout.Cursor = Cursors.Hand;
-            btnLogout.Location = new Point(185, 501);
+            btnLogout.Location = new Point(142, 391);
+            btnLogout.Margin = new Padding(2, 2, 2, 2);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(468, 46);
+            btnLogout.Size = new Size(360, 36);
             btnLogout.TabIndex = 6;
             btnLogout.Text = "Logout";
             btnLogout.UseVisualStyleBackColor = false;
@@ -86,18 +90,20 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 19.875F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(185, 23);
+            label1.Location = new Point(142, 18);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(468, 71);
+            label1.Size = new Size(351, 54);
             label1.TabIndex = 5;
             label1.Text = "Admin Dashboard";
             // 
             // btnManageTank
             // 
             btnManageTank.Cursor = Cursors.Hand;
-            btnManageTank.Location = new Point(185, 352);
+            btnManageTank.Location = new Point(142, 275);
+            btnManageTank.Margin = new Padding(2, 2, 2, 2);
             btnManageTank.Name = "btnManageTank";
-            btnManageTank.Size = new Size(468, 46);
+            btnManageTank.Size = new Size(360, 36);
             btnManageTank.TabIndex = 10;
             btnManageTank.Text = "Manage Tank";
             btnManageTank.UseVisualStyleBackColor = true;
@@ -106,9 +112,10 @@
             // btnViewHistory
             // 
             btnViewHistory.Cursor = Cursors.Hand;
-            btnViewHistory.Location = new Point(185, 427);
+            btnViewHistory.Location = new Point(142, 334);
+            btnViewHistory.Margin = new Padding(2, 2, 2, 2);
             btnViewHistory.Name = "btnViewHistory";
-            btnViewHistory.Size = new Size(468, 46);
+            btnViewHistory.Size = new Size(360, 36);
             btnViewHistory.TabIndex = 11;
             btnViewHistory.Text = "View History";
             btnViewHistory.UseVisualStyleBackColor = true;
@@ -116,9 +123,9 @@
             // 
             // AdminDashboard
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 604);
+            ClientSize = new Size(615, 472);
             Controls.Add(btnViewHistory);
             Controls.Add(btnManageTank);
             Controls.Add(btnManageManufactory);
@@ -126,7 +133,9 @@
             Controls.Add(btnManageModel);
             Controls.Add(btnLogout);
             Controls.Add(label1);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "AdminDashboard";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminDashboard";
             ResumeLayout(false);
             PerformLayout();
