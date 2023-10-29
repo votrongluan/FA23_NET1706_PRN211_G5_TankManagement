@@ -14,7 +14,37 @@ namespace Tank_Management
     {
         public UserDashboard()
         {
+            Console.WriteLine("User Dashboard");
             InitializeComponent();
+        }
+
+        private void btnManageDriver_Click(object sender, EventArgs e)
+        {
+            var manageDriver = new DriverGrid();
+            manageDriver.Show();
+            this.Hide();
+        }
+
+        private void btnViewTankHistory_Click(object sender, EventArgs e)
+        {
+            var historyGrid = new HistoryGrid();
+            historyGrid.Show();
+            this.Hide();
+        }
+
+        private void btnChangeUnit_Click(object sender, EventArgs e)
+        {
+            var changeUnit = new ChangeUnit();
+            changeUnit.Show();
+            this.Hide();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Program.user = null;
+            var login = new Login();
+            login.Show();
+            this.Hide();
         }
     }
 }
