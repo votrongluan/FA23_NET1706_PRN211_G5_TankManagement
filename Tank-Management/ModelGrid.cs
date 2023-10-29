@@ -15,6 +15,7 @@ namespace Tank_Management
         public ModelGrid()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
     }
 }

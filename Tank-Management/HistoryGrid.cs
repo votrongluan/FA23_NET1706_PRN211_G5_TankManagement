@@ -15,6 +15,7 @@ namespace Tank_Management
         public HistoryGrid()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
     }
 }
