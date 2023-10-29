@@ -1,7 +1,5 @@
-﻿namespace Tank_Management
-{
-    partial class Login
-    {
+﻿namespace Tank_Management {
+    partial class Login {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -11,10 +9,8 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
+        protected override void Dispose(bool disposing) {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -26,111 +22,106 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+        private void InitializeComponent() {
             lbUsername = new Label();
             txtUsername = new TextBox();
             label1 = new Label();
             txtPassword = new TextBox();
             btnLogin = new Button();
-            label2 = new Label();
-            pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            lbLogin = new Label();
             SuspendLayout();
             // 
             // lbUsername
             // 
+            lbUsername.Anchor = AnchorStyles.None;
             lbUsername.AutoSize = true;
-            lbUsername.Location = new Point(343, 222);
-            lbUsername.Margin = new Padding(5, 0, 5, 0);
+            lbUsername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbUsername.Location = new Point(193, 131);
             lbUsername.Name = "lbUsername";
-            lbUsername.Size = new Size(121, 32);
+            lbUsername.Size = new Size(99, 28);
             lbUsername.TabIndex = 0;
             lbUsername.Text = "Username";
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(475, 217);
-            txtUsername.Margin = new Padding(5, 5, 5, 5);
+            txtUsername.Anchor = AnchorStyles.None;
+            txtUsername.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtUsername.Cursor = Cursors.IBeam;
+            txtUsername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtUsername.Location = new Point(329, 128);
             txtUsername.Name = "txtUsername";
             txtUsername.PlaceholderText = "username";
-            txtUsername.Size = new Size(228, 39);
+            txtUsername.Size = new Size(142, 34);
             txtUsername.TabIndex = 1;
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.Location = new Point(343, 287);
-            label1.Margin = new Padding(5, 0, 5, 0);
+            label1.BackColor = Color.Transparent;
+            label1.FlatStyle = FlatStyle.Flat;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(199, 181);
             label1.Name = "label1";
-            label1.Size = new Size(111, 32);
+            label1.Size = new Size(93, 28);
             label1.TabIndex = 2;
             label1.Text = "Password";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(475, 283);
-            txtPassword.Margin = new Padding(5, 5, 5, 5);
+            txtPassword.Anchor = AnchorStyles.None;
+            txtPassword.Cursor = Cursors.IBeam;
+            txtPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPassword.Location = new Point(329, 178);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.PlaceholderText = "password";
-            txtPassword.Size = new Size(228, 39);
+            txtPassword.Size = new Size(142, 34);
             txtPassword.TabIndex = 3;
             // 
             // btnLogin
             // 
+            btnLogin.Anchor = AnchorStyles.None;
             btnLogin.Cursor = Cursors.Hand;
-            btnLogin.Location = new Point(550, 374);
-            btnLogin.Margin = new Padding(5, 5, 5, 5);
+            btnLogin.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLogin.Location = new Point(255, 268);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(153, 46);
+            btnLogin.RightToLeft = RightToLeft.No;
+            btnLogin.Size = new Size(123, 47);
             btnLogin.TabIndex = 4;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = true;
             btnLogin.Click += btnLogin_Click;
             // 
-            // label2
+            // lbLogin
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.Green;
-            label2.Location = new Point(442, 78);
-            label2.Margin = new Padding(5, 0, 5, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(183, 71);
-            label2.TabIndex = 5;
-            label2.Text = "LOGIN";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(3, 0);
-            pictureBox1.Margin = new Padding(5, 5, 5, 5);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1042, 824);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 6;
-            pictureBox1.TabStop = false;
+            lbLogin.Anchor = AnchorStyles.Top;
+            lbLogin.BackColor = Color.Transparent;
+            lbLogin.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            lbLogin.ForeColor = Color.Green;
+            lbLogin.Location = new Point(223, 24);
+            lbLogin.Name = "lbLogin";
+            lbLogin.Size = new Size(186, 62);
+            lbLogin.TabIndex = 5;
+            lbLogin.Text = "LOGIN";
+            lbLogin.TextAlign = ContentAlignment.MiddleCenter;
+            lbLogin.UseCompatibleTextRendering = true;
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1046, 634);
-            Controls.Add(label2);
+            ClientSize = new Size(644, 396);
+            Controls.Add(lbLogin);
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);
             Controls.Add(label1);
             Controls.Add(txtUsername);
             Controls.Add(lbUsername);
-            Controls.Add(pictureBox1);
-            Margin = new Padding(5, 5, 5, 5);
             Name = "Login";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -142,7 +133,7 @@
         private Label label1;
         private TextBox txtPassword;
         private Button btnLogin;
-        private Label label2;
+        private Label lbLogin;
         private PictureBox pictureBox1;
     }
 }

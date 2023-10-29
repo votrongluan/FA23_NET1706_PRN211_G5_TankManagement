@@ -41,7 +41,11 @@ namespace Tank_Management {
         }
 
         public HistoryGrid() {
+            this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
+            lbHistory.Text = "History Table".ToUpper();
+            lbHistory.Size = new Size(this.ClientSize.Width, 50);
+            lbHistory.BackColor = Color.Transparent;
             updateGridView();
         }
 
@@ -49,7 +53,6 @@ namespace Tank_Management {
             UserDashboard userDashboard = new UserDashboard();
             userDashboard.Show();
             this.Hide();
-            this.StartPosition = FormStartPosition.CenterScreen;
         }
     }
 }
