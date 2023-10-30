@@ -151,6 +151,7 @@ namespace Tank_Management {
                 clearTextBox();
                 enableCreate();
             } catch (Exception) {
+            }
                 // Show the error message
                 MessageBox.Show("Can not delete this driver!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

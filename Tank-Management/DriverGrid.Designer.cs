@@ -35,8 +35,7 @@
             label1 = new Label();
             txtIdCard = new TextBox();
             label5 = new Label();
-            txtName = new TextBox();
-            label6 = new Label();
+            txtName = new TextBox();e
             txtPhone = new TextBox();
             label7 = new Label();
             cbxUnit = new ComboBox();
@@ -65,6 +64,7 @@
             // 
             btnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnSearch.Location = new Point(612, 14);
+            btnSearch.Location = new Point(959, 78);
             btnSearch.Margin = new Padding(2);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(92, 29);
@@ -81,12 +81,18 @@
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Find by id, model or manufactory";
             txtSearch.Size = new Size(549, 27);
+            txtSearch.Location = new Point(96, 80);
+            txtSearch.Margin = new Padding(2);
+            txtSearch.Name = "txtSearch";
+            txtSearch.PlaceholderText = "Find by id, model or manufactory";
+            txtSearch.Size = new Size(854, 27);
             txtSearch.TabIndex = 22;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Location = new Point(2, 17);
+            label4.Location = new Point(25, 82);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new Size(53, 20);
@@ -154,7 +160,7 @@
             dgvDriver.RowTemplate.Height = 41;
             dgvDriver.Size = new Size(702, 361);
             dgvDriver.TabIndex = 14;
-            dgvDriver.CellDoubleClick += dgvDriver_CellDoubleClick;
+            dgvDriver.CellContentClick += dgvDriver_CellDoubleClick;
             // 
             // label1
             // 
