@@ -54,9 +54,10 @@
             // 
             // btnResetTankDgv
             // 
-            btnResetTankDgv.Location = new Point(40, 823);
+            btnResetTankDgv.Location = new Point(25, 514);
+            btnResetTankDgv.Margin = new Padding(2);
             btnResetTankDgv.Name = "btnResetTankDgv";
-            btnResetTankDgv.Size = new Size(220, 46);
+            btnResetTankDgv.Size = new Size(135, 29);
             btnResetTankDgv.TabIndex = 24;
             btnResetTankDgv.Text = "Reset tank data";
             btnResetTankDgv.UseVisualStyleBackColor = true;
@@ -64,9 +65,10 @@
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(1559, 125);
+            btnSearch.Location = new Point(959, 78);
+            btnSearch.Margin = new Padding(2);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(150, 46);
+            btnSearch.Size = new Size(92, 29);
             btnSearch.TabIndex = 23;
             btnSearch.Text = "Find";
             btnSearch.UseVisualStyleBackColor = true;
@@ -74,27 +76,30 @@
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(156, 128);
+            txtSearch.Location = new Point(96, 80);
+            txtSearch.Margin = new Padding(2);
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Find by id, model or manufactory";
-            txtSearch.Size = new Size(1385, 39);
+            txtSearch.Size = new Size(854, 27);
             txtSearch.TabIndex = 22;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(40, 131);
+            label4.Location = new Point(25, 82);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(85, 32);
+            label4.Size = new Size(53, 20);
             label4.TabIndex = 21;
             label4.Text = "Search";
             // 
             // btnBack
             // 
             btnBack.BackColor = Color.FromArgb(255, 255, 192);
-            btnBack.Location = new Point(1417, 824);
+            btnBack.Location = new Point(872, 515);
+            btnBack.Margin = new Padding(2);
             btnBack.Name = "btnBack";
-            btnBack.Size = new Size(292, 46);
+            btnBack.Size = new Size(180, 29);
             btnBack.TabIndex = 20;
             btnBack.Text = "Back to Dashboard";
             btnBack.UseVisualStyleBackColor = false;
@@ -103,18 +108,20 @@
             // txtId
             // 
             txtId.Enabled = false;
-            txtId.Location = new Point(1347, 241);
+            txtId.Location = new Point(829, 151);
+            txtId.Margin = new Padding(2);
             txtId.Name = "txtId";
             txtId.ReadOnly = true;
-            txtId.Size = new Size(362, 39);
+            txtId.Size = new Size(224, 27);
             txtId.TabIndex = 17;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(1228, 306);
+            label3.Location = new Point(756, 191);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(86, 32);
+            label3.Size = new Size(55, 20);
             label3.TabIndex = 16;
             label3.Text = "Id card";
             // 
@@ -122,9 +129,10 @@
             // 
             label2.AllowDrop = true;
             label2.AutoSize = true;
-            label2.Location = new Point(1228, 244);
+            label2.Location = new Point(756, 152);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(34, 32);
+            label2.Size = new Size(22, 20);
             label2.TabIndex = 15;
             label2.Text = "Id";
             // 
@@ -132,86 +140,96 @@
             // 
             dgvDriver.BackgroundColor = Color.White;
             dgvDriver.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDriver.Location = new Point(40, 205);
+            dgvDriver.Location = new Point(25, 128);
+            dgvDriver.Margin = new Padding(2);
             dgvDriver.Name = "dgvDriver";
             dgvDriver.ReadOnly = true;
             dgvDriver.RowHeadersWidth = 82;
             dgvDriver.RowTemplate.Height = 41;
-            dgvDriver.Size = new Size(1141, 578);
+            dgvDriver.Size = new Size(702, 361);
             dgvDriver.TabIndex = 14;
-            dgvDriver.CellDoubleClick += dgvDriver_CellDoubleClick;
+            dgvDriver.CellContentClick += dgvDriver_CellDoubleClick;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 19.875F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(764, 19);
+            label1.Location = new Point(470, 12);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(360, 71);
+            label1.Size = new Size(230, 46);
             label1.TabIndex = 13;
             label1.Text = "Mange Driver";
             // 
             // txtIdCard
             // 
-            txtIdCard.Location = new Point(1347, 306);
+            txtIdCard.Location = new Point(829, 191);
+            txtIdCard.Margin = new Padding(2);
             txtIdCard.Name = "txtIdCard";
-            txtIdCard.Size = new Size(362, 39);
+            txtIdCard.Size = new Size(224, 27);
             txtIdCard.TabIndex = 25;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(1228, 368);
+            label5.Location = new Point(756, 230);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(78, 32);
+            label5.Size = new Size(49, 20);
             label5.TabIndex = 26;
             label5.Text = "Name";
             // 
             // txtName
             // 
-            txtName.Location = new Point(1347, 368);
+            txtName.Location = new Point(829, 230);
+            txtName.Margin = new Padding(2);
             txtName.Name = "txtName";
-            txtName.Size = new Size(362, 39);
+            txtName.Size = new Size(224, 27);
             txtName.TabIndex = 27;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(1228, 433);
+            label6.Location = new Point(756, 271);
+            label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(82, 32);
+            label6.Size = new Size(50, 20);
             label6.TabIndex = 28;
             label6.Text = "Phone";
             // 
             // txtPhone
             // 
-            txtPhone.Location = new Point(1347, 426);
+            txtPhone.Location = new Point(829, 266);
+            txtPhone.Margin = new Padding(2);
             txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(362, 39);
+            txtPhone.Size = new Size(224, 27);
             txtPhone.TabIndex = 29;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(1224, 499);
+            label7.Location = new Point(753, 312);
+            label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new Size(58, 32);
+            label7.Size = new Size(36, 20);
             label7.TabIndex = 30;
             label7.Text = "Unit";
             // 
             // cbxUnit
             // 
             cbxUnit.FormattingEnabled = true;
-            cbxUnit.Location = new Point(1347, 499);
+            cbxUnit.Location = new Point(829, 312);
+            cbxUnit.Margin = new Padding(2);
             cbxUnit.Name = "cbxUnit";
-            cbxUnit.Size = new Size(362, 40);
+            cbxUnit.Size = new Size(224, 28);
             cbxUnit.TabIndex = 31;
             // 
             // btnCreate
             // 
-            btnCreate.Location = new Point(1559, 579);
+            btnCreate.Location = new Point(959, 362);
+            btnCreate.Margin = new Padding(2);
             btnCreate.Name = "btnCreate";
-            btnCreate.Size = new Size(150, 46);
+            btnCreate.Size = new Size(92, 29);
             btnCreate.TabIndex = 32;
             btnCreate.Text = "Create";
             btnCreate.UseVisualStyleBackColor = true;
@@ -220,9 +238,10 @@
             // btnUpdate
             // 
             btnUpdate.Enabled = false;
-            btnUpdate.Location = new Point(1228, 579);
+            btnUpdate.Location = new Point(756, 362);
+            btnUpdate.Margin = new Padding(2);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(150, 46);
+            btnUpdate.Size = new Size(92, 29);
             btnUpdate.TabIndex = 33;
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = true;
@@ -231,9 +250,10 @@
             // btnDelete
             // 
             btnDelete.Enabled = false;
-            btnDelete.Location = new Point(1228, 671);
+            btnDelete.Location = new Point(756, 419);
+            btnDelete.Margin = new Padding(2);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(150, 46);
+            btnDelete.Size = new Size(92, 29);
             btnDelete.TabIndex = 34;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
@@ -241,9 +261,10 @@
             // 
             // btnReset
             // 
-            btnReset.Location = new Point(1559, 671);
+            btnReset.Location = new Point(959, 419);
+            btnReset.Margin = new Padding(2);
             btnReset.Name = "btnReset";
-            btnReset.Size = new Size(150, 46);
+            btnReset.Size = new Size(92, 29);
             btnReset.TabIndex = 35;
             btnReset.Text = "Reset";
             btnReset.UseVisualStyleBackColor = true;
@@ -251,9 +272,9 @@
             // 
             // DriverGrid
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1754, 908);
+            ClientSize = new Size(1079, 568);
             Controls.Add(btnReset);
             Controls.Add(btnDelete);
             Controls.Add(btnUpdate);
@@ -275,6 +296,7 @@
             Controls.Add(label2);
             Controls.Add(dgvDriver);
             Controls.Add(label1);
+            Margin = new Padding(2);
             Name = "DriverGrid";
             Text = "DriverGrid";
             ((System.ComponentModel.ISupportInitialize)dgvDriver).EndInit();

@@ -168,11 +168,12 @@ namespace Tank_Management
                 LoadDriver();
                 clearTextBox();
                 enableCreate();
-            } catch (Exception)
+            }
+            catch (Exception)
             {
                 // Show the error message
                 MessageBox.Show("Can not delete this driver!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }  
+            }
         }
 
         private void btnReset_Click(object sender, EventArgs e)
