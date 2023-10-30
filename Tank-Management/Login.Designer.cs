@@ -85,7 +85,7 @@
             btnLogin.Anchor = AnchorStyles.None;
             btnLogin.Cursor = Cursors.Hand;
             btnLogin.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLogin.Location = new Point(255, 268);
+            btnLogin.Location = new Point(257, 241);
             btnLogin.Name = "btnLogin";
             btnLogin.RightToLeft = RightToLeft.No;
             btnLogin.Size = new Size(123, 47);
