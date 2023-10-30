@@ -8,12 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Tank_Management
-{
-    public partial class UserDashboard : Form
-    {
-        public UserDashboard()
-        {
+namespace Tank_Management {
+    public partial class UserDashboard : Form {
+        public UserDashboard() {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
@@ -25,22 +22,19 @@ namespace Tank_Management
             this.Hide();
         }
 
-        private void btnViewTankHistory_Click(object sender, EventArgs e)
-        {
+        private void btnViewTankHistory_Click(object sender, EventArgs e) {
             var historyGrid = new HistoryGrid();
             historyGrid.Show();
             this.Hide();
         }
 
-        private void btnChangeUnit_Click(object sender, EventArgs e)
-        {
+        private void btnChangeUnit_Click(object sender, EventArgs e) {
             var changeUnit = new ChangeUnit();
             changeUnit.Show();
             this.Hide();
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
+        private void btnLogout_Click(object sender, EventArgs e) {
             Program.user = null;
             var login = new Login();
             login.Show();

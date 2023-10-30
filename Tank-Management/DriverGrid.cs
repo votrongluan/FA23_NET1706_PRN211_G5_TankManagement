@@ -12,17 +12,14 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 using static Tank_Management.ChangeUnit;
 
-namespace Tank_Management
-{
-    public partial class DriverGrid : Form
-    {
+namespace Tank_Management {
+    public partial class DriverGrid : Form {
         private DriverRepository driverRepository = new DriverRepository();
         private UnitManagerRepository unitManagerRepository = new UnitManagerRepository();
         private UnitRepository unitRepository = new UnitRepository();
         internal record DriverData(int Id, string IdCard, string Name, string Phone, string Unit);
 
-        private void LoadUnit()
-        {
+        private void LoadUnit() {
             cbxUnit.DataSource = unitRepository.GetAll()
                 .Select(u => new { u.Id, u.Name })
                 .ToList();
@@ -31,22 +28,19 @@ namespace Tank_Management
             cbxUnit.SelectedIndex = 0;
         }
 
-        private void disableCreate()
-        {
+        private void disableCreate() {
             btnCreate.Enabled = false;
             btnDelete.Enabled = true;
             btnUpdate.Enabled = true;
         }
 
-        private void enableCreate()
-        {
+        private void enableCreate() {
             btnCreate.Enabled = true;
             btnDelete.Enabled = false;
             btnUpdate.Enabled = false;
         }
 
-        private void clearTextBox()
-        {
+        private void clearTextBox() {
             txtId.Text = "";
             txtIdCard.Text = "";
             txtName.Text = "";
@@ -54,8 +48,7 @@ namespace Tank_Management
             cbxUnit.SelectedIndex = 0;
         }
 
-        private void LoadDriver(string search = "")
-        {
+        private void LoadDriver(string search = "") {
             var drivers = driverRepository.GetAll()
                 .Select(t => new DriverData(
                     t.Id,
@@ -66,8 +59,7 @@ namespace Tank_Management
                 ))
                 .ToList();
 
-            if (!string.IsNullOrEmpty(search))
-            {
+            if (!string.IsNullOrEmpty(search)) {
                 drivers = drivers
                     .Where(t => t.IdCard.Contains(search, StringComparison.OrdinalIgnoreCase) || t.Name.Contains(search, StringComparison.OrdinalIgnoreCase) || t.Phone.Contains(search, StringComparison.OrdinalIgnoreCase) || t.Unit.Contains(search, StringComparison.OrdinalIgnoreCase))
                     .ToList();
@@ -76,8 +68,7 @@ namespace Tank_Management
             dgvDriver.DataSource = drivers;
         }
 
-        public DriverGrid()
-        {
+        public DriverGrid() {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
 
@@ -85,15 +76,13 @@ namespace Tank_Management
             LoadUnit();
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
-        {
+        private void btnBack_Click(object sender, EventArgs e) {
             var adminDashboard = new AdminDashboard();
             adminDashboard.Show();
             this.Hide();
         }
 
-        private void dgvDriver_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
+        private void dgvDriver_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
             // Display the selected row's data in TextBoxes
             txtId.Text = dgvDriver.Rows[e.RowIndex].Cells[0].Value.ToString();
             txtIdCard.Text = dgvDriver.Rows[e.RowIndex].Cells[1].Value.ToString();
@@ -105,8 +94,7 @@ namespace Tank_Management
             disableCreate();
         }
 
-        private void btnCreate_Click(object sender, EventArgs e)
-        {
+        private void btnCreate_Click(object sender, EventArgs e) {
             // Load data from TextBoxes
             var idCard = txtIdCard.Text;
             var name = txtName.Text;
@@ -121,22 +109,19 @@ namespace Tank_Management
             }
 
             // Check the phone with regex for phone number
-            if (!System.Text.RegularExpressions.Regex.IsMatch(phone, @"^0\d{9,10}$"))
-            {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(phone, @"^0\d{9,10}$")) {
                 MessageBox.Show("Phone is invalid", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             // Check name is empty
-            if (name == "")
-            {
+            if (name == "") {
                 MessageBox.Show("Name is empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             // Create new driver
-            var driver = new Driver()
-            {
+            var driver = new Driver() {
                 IdCard = idCard,
                 Name = name,
                 Phone = phone,
@@ -151,8 +136,7 @@ namespace Tank_Management
             clearTextBox();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
+        private void btnDelete_Click(object sender, EventArgs e) {
             // Load the id from TextBox
             var id = int.Parse(txtId.Text);
 
@@ -160,30 +144,26 @@ namespace Tank_Management
             var driver = driverRepository.GetAll().Where(d => d.Id == id).FirstOrDefault();
 
             // Delete the driver
-            try
-            {
+            try {
                 driverRepository.Delete(driver);
 
                 // Reload data
                 LoadDriver();
                 clearTextBox();
                 enableCreate();
+            } catch (Exception) {
             }
-            catch (Exception)
-            {
                 // Show the error message
                 MessageBox.Show("Can not delete this driver!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
-        {
+        private void btnReset_Click(object sender, EventArgs e) {
             clearTextBox();
             enableCreate();
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
+        private void btnUpdate_Click(object sender, EventArgs e) {
             // Load data from TextBoxes
             var id = int.Parse(txtId.Text);
             var idCard = txtIdCard.Text;
@@ -192,30 +172,26 @@ namespace Tank_Management
             var unitId = int.Parse(cbxUnit.SelectedValue.ToString());
 
             // Check the idCard with regex for indentity card
-            if (!System.Text.RegularExpressions.Regex.IsMatch(idCard, @"^\d{10,}$"))
-            {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(idCard, @"^\d{10,}$")) {
                 MessageBox.Show("Identity is invalid", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             // Check the phone with regex for phone number
-            if (!System.Text.RegularExpressions.Regex.IsMatch(phone, @"^0\d{9,10}$"))
-            {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(phone, @"^0\d{9,10}$")) {
                 MessageBox.Show("Phone is invalid", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             // Check name is empty
-            if (name == "")
-            {
+            if (name == "") {
                 MessageBox.Show("Name is empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             // Get the driver by id
             var driver = driverRepository.GetAll().Where(d => d.Id == id).FirstOrDefault();
-            if (driver != null)
-            {
+            if (driver != null) {
                 // Update the driver
                 driver.IdCard = idCard;
                 driver.Name = name;
@@ -232,15 +208,13 @@ namespace Tank_Management
             }
         }
 
-        private void btnResetTankDgv_Click(object sender, EventArgs e)
-        {
+        private void btnResetTankDgv_Click(object sender, EventArgs e) {
             LoadDriver();
             clearTextBox();
             enableCreate();
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
+        private void btnSearch_Click(object sender, EventArgs e) {
             var search = txtSearch.Text;
             LoadDriver(search);
         }

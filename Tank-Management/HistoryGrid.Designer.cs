@@ -44,19 +44,21 @@
             // button1
             // 
             button1.Anchor = AnchorStyles.Bottom;
+            button1.BackColor = Color.FromArgb(255, 255, 192);
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             button1.Location = new Point(350, 440);
             button1.Name = "button1";
             button1.Size = new Size(197, 64);
             button1.TabIndex = 2;
             button1.Text = "Back to dashboard";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // dgvHistory
             // 
             dgvHistory.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvHistory.BackgroundColor = Color.White;
             dgvHistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvHistory.Location = new Point(118, 128);
             dgvHistory.Name = "dgvHistory";

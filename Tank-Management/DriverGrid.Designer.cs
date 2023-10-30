@@ -1,7 +1,5 @@
-﻿namespace Tank_Management
-{
-    partial class DriverGrid
-    {
+﻿namespace Tank_Management {
+    partial class DriverGrid {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -11,10 +9,8 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
+        protected override void Dispose(bool disposing) {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -26,8 +22,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
             btnResetTankDgv = new Button();
             btnSearch = new Button();
             txtSearch = new TextBox();
@@ -40,8 +35,7 @@
             label1 = new Label();
             txtIdCard = new TextBox();
             label5 = new Label();
-            txtName = new TextBox();
-            label6 = new Label();
+            txtName = new TextBox();e
             txtPhone = new TextBox();
             label7 = new Label();
             cbxUnit = new ComboBox();
@@ -49,11 +43,14 @@
             btnUpdate = new Button();
             btnDelete = new Button();
             btnReset = new Button();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgvDriver).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // btnResetTankDgv
             // 
+            btnResetTankDgv.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnResetTankDgv.Location = new Point(25, 514);
             btnResetTankDgv.Margin = new Padding(2);
             btnResetTankDgv.Name = "btnResetTankDgv";
@@ -65,7 +62,10 @@
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(1752, 124);
+            btnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnSearch.Location = new Point(612, 14);
+            btnSearch.Location = new Point(959, 78);
+            btnSearch.Margin = new Padding(2);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(92, 29);
             btnSearch.TabIndex = 23;
@@ -75,7 +75,14 @@
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(131, 127);
+            txtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtSearch.Location = new Point(59, 14);
+            txtSearch.Margin = new Padding(2);
+            txtSearch.Name = "txtSearch";
+            txtSearch.PlaceholderText = "Find by id, model or manufactory";
+            txtSearch.Size = new Size(549, 27);
+            txtSearch.Location = new Point(96, 80);
+            txtSearch.Margin = new Padding(2);
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Find by id, model or manufactory";
             txtSearch.Size = new Size(1603, 39);
@@ -84,6 +91,7 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.Location = new Point(2, 17);
             label4.Location = new Point(25, 82);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
@@ -93,6 +101,7 @@
             // 
             // btnBack
             // 
+            btnBack.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnBack.BackColor = Color.FromArgb(255, 255, 192);
             btnBack.Location = new Point(1610, 823);
             btnBack.Name = "btnBack";
@@ -104,6 +113,7 @@
             // 
             // txtId
             // 
+            txtId.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             txtId.Enabled = false;
             txtId.Location = new Point(1540, 240);
             txtId.Name = "txtId";
@@ -113,6 +123,7 @@
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Location = new Point(1421, 305);
             label3.Name = "label3";
@@ -123,6 +134,7 @@
             // label2
             // 
             label2.AllowDrop = true;
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.Location = new Point(1421, 243);
             label2.Name = "label2";
@@ -132,13 +144,15 @@
             // 
             // dgvDriver
             // 
+            dgvDriver.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvDriver.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
             dgvDriver.BackgroundColor = Color.White;
             dgvDriver.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvDriver.Location = new Point(25, 128);
             dgvDriver.Margin = new Padding(2);
             dgvDriver.Name = "dgvDriver";
             dgvDriver.ReadOnly = true;
-            dgvDriver.RowHeadersWidth = 82;
+            dgvDriver.RowHeadersWidth = 51;
             dgvDriver.RowTemplate.Height = 41;
             dgvDriver.Size = new Size(1335, 578);
             dgvDriver.TabIndex = 14;
@@ -146,6 +160,7 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 19.875F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(470, 12);
@@ -157,13 +172,16 @@
             // 
             // txtIdCard
             // 
-            txtIdCard.Location = new Point(1540, 305);
+            txtIdCard.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtIdCard.Location = new Point(829, 191);
+            txtIdCard.Margin = new Padding(2);
             txtIdCard.Name = "txtIdCard";
             txtIdCard.Size = new Size(224, 27);
             txtIdCard.TabIndex = 25;
             // 
             // label5
             // 
+            label5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label5.AutoSize = true;
             label5.Location = new Point(1421, 367);
             label5.Name = "label5";
@@ -173,13 +191,16 @@
             // 
             // txtName
             // 
-            txtName.Location = new Point(1540, 367);
+            txtName.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtName.Location = new Point(829, 230);
+            txtName.Margin = new Padding(2);
             txtName.Name = "txtName";
             txtName.Size = new Size(224, 27);
             txtName.TabIndex = 27;
             // 
             // label6
             // 
+            label6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label6.AutoSize = true;
             label6.Location = new Point(1421, 432);
             label6.Name = "label6";
@@ -189,13 +210,16 @@
             // 
             // txtPhone
             // 
-            txtPhone.Location = new Point(1540, 425);
+            txtPhone.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtPhone.Location = new Point(829, 266);
+            txtPhone.Margin = new Padding(2);
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new Size(224, 27);
             txtPhone.TabIndex = 29;
             // 
             // label7
             // 
+            label7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label7.AutoSize = true;
             label7.Location = new Point(1417, 498);
             label7.Name = "label7";
@@ -205,6 +229,7 @@
             // 
             // cbxUnit
             // 
+            cbxUnit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             cbxUnit.FormattingEnabled = true;
             cbxUnit.Location = new Point(1540, 498);
             cbxUnit.Name = "cbxUnit";
@@ -213,7 +238,9 @@
             // 
             // btnCreate
             // 
-            btnCreate.Location = new Point(1752, 578);
+            btnCreate.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnCreate.Location = new Point(959, 362);
+            btnCreate.Margin = new Padding(2);
             btnCreate.Name = "btnCreate";
             btnCreate.Size = new Size(92, 29);
             btnCreate.TabIndex = 32;
@@ -223,6 +250,7 @@
             // 
             // btnUpdate
             // 
+            btnUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnUpdate.Enabled = false;
             btnUpdate.Location = new Point(1421, 578);
             btnUpdate.Name = "btnUpdate";
@@ -234,6 +262,7 @@
             // 
             // btnDelete
             // 
+            btnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnDelete.Enabled = false;
             btnDelete.Location = new Point(1421, 670);
             btnDelete.Name = "btnDelete";
@@ -245,14 +274,26 @@
             // 
             // btnReset
             // 
-
-            btnReset.Location = new Point(1752, 670);
+            btnReset.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnReset.Location = new Point(959, 419);
+            btnReset.Margin = new Padding(2);
             btnReset.Name = "btnReset";
             btnReset.Size = new Size(92, 29);
             btnReset.TabIndex = 35;
             btnReset.Text = "Reset";
             btnReset.UseVisualStyleBackColor = true;
             btnReset.Click += btnReset_Click;
+            // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(txtSearch);
+            panel1.Controls.Add(btnSearch);
+            panel1.Location = new Point(23, 80);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(704, 464);
+            panel1.TabIndex = 36;
             // 
             // DriverGrid
             // 
@@ -271,19 +312,19 @@
             Controls.Add(label5);
             Controls.Add(txtIdCard);
             Controls.Add(btnResetTankDgv);
-            Controls.Add(btnSearch);
-            Controls.Add(txtSearch);
-            Controls.Add(label4);
             Controls.Add(btnBack);
             Controls.Add(txtId);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(dgvDriver);
             Controls.Add(label1);
+            Controls.Add(panel1);
             Margin = new Padding(2);
             Name = "DriverGrid";
             Text = "DriverGrid";
             ((System.ComponentModel.ISupportInitialize)dgvDriver).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -311,5 +352,6 @@
         private Button btnUpdate;
         private Button btnDelete;
         private Button btnReset;
+        private Panel panel1;
     }
 }

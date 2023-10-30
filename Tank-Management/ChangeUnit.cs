@@ -11,10 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Tank_Management
-{
-    public partial class ChangeUnit : Form
-    {
+namespace Tank_Management {
+    public partial class ChangeUnit : Form {
         private TankRepository tankRepository = new TankRepository();
         private UnitRepository unitRepository = new UnitRepository();
         private UnitManagerRepository unitManagerRepository = new UnitManagerRepository();
@@ -22,8 +20,7 @@ namespace Tank_Management
         internal record TankData(int Id, string Model, string Manufactory);
         private Unit currentUnit = null;
 
-        private void setCurrentUnit()
-        {
+        private void setCurrentUnit() {
             var unit = unitManagerRepository.GetAll()
                  .Where(um => um.UserId == Program.user.Id)
                  .Select(um => um.Unit)
@@ -32,8 +29,7 @@ namespace Tank_Management
             currentUnit = unit;
         }
 
-        private void LoadTank(string search = "")
-        {
+        private void LoadTank(string search = "") {
             var tanks = tankRepository.GetAll()
                 .Where(t => t.UnitId == currentUnit.Id)
                 .Select(t => new TankData(
@@ -43,8 +39,7 @@ namespace Tank_Management
                 ))
                 .ToList();
 
-            if (!string.IsNullOrEmpty(search))
-            {
+            if (!string.IsNullOrEmpty(search)) {
                 tanks = tanks
                     .Where(t => t.Model.Contains(search, StringComparison.OrdinalIgnoreCase) || t.Manufactory.Contains(search, StringComparison.OrdinalIgnoreCase))
                     .ToList();
@@ -52,14 +47,12 @@ namespace Tank_Management
 
             dgvTank.DataSource = tanks;
 
-            if (dgvTank.Rows.Count > 0)
-            {
+            if (dgvTank.Rows.Count > 0) {
                 txtTankId.Text = dgvTank.Rows[0].Cells[0].Value.ToString();
             }
         }
 
-        private void LoadUnit()
-        {
+        private void LoadUnit() {
             cbxUnitId.DataSource = unitRepository.GetAll()
                 .Where(u => u.Id != Program.user.Id)
                 .Select(u => new { u.Id, u.Name })
@@ -69,8 +62,7 @@ namespace Tank_Management
             cbxUnitId.SelectedIndex = 0;
         }
 
-        public ChangeUnit()
-        {
+        public ChangeUnit() {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
 
@@ -79,16 +71,13 @@ namespace Tank_Management
             LoadUnit();
         }
 
-        private void btnChange_Click(object sender, EventArgs e)
-        {
-            try
-            {
+        private void btnChange_Click(object sender, EventArgs e) {
+            try {
                 int tankId = int.Parse(txtTankId.Text);
                 int unitId = int.Parse(cbxUnitId.SelectedValue.ToString());
 
                 // Create a history object
-                var history = new History()
-                {
+                var history = new History() {
                     TankId = tankId,
                     FromUnitId = currentUnit.Id,
                     ToUnitId = unitId,
@@ -108,36 +97,30 @@ namespace Tank_Management
                 MessageBox.Show("Change unit successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 LoadTank();
-            }
-            catch (Exception)
-            {
+            } catch (Exception) {
                 MessageBox.Show("Tank id or unit id is invalid!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
 
-        private void dgvTank_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
+        private void dgvTank_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
             // Display the tank id in the txtTankId
             txtTankId.Text = dgvTank.Rows[e.RowIndex].Cells[0].Value.ToString();
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
-        {
+        private void btnBack_Click(object sender, EventArgs e) {
             var userDashboard = new UserDashboard();
             userDashboard.Show();
             this.Hide();
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
+        private void btnSearch_Click(object sender, EventArgs e) {
             // Get the search keyword
             string keyword = txtSearch.Text;
             LoadTank(keyword);
         }
 
-        private void btnResetTankDgv_Click(object sender, EventArgs e)
-        {
+        private void btnResetTankDgv_Click(object sender, EventArgs e) {
             LoadTank();
         }
     }
