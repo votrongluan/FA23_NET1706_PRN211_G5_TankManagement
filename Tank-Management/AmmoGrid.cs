@@ -276,6 +276,9 @@ namespace Tank_Management
         {
             clearTextBox();
             enableCreate();
+
+            //catch enter button
+            this.AcceptButton = btnCreate;
         }
 
         private void dgvAmmo_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
