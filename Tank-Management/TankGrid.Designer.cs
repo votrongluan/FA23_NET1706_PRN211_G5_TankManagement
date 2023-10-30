@@ -1,7 +1,5 @@
-﻿namespace Tank_Management
-{
-    partial class TankGrid
-    {
+﻿namespace Tank_Management {
+    partial class TankGrid {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -11,10 +9,8 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
+        protected override void Dispose(bool disposing) {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -26,8 +22,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
             btnReset = new Button();
             btnDelete = new Button();
             btnUpdate = new Button();
@@ -52,10 +47,10 @@
             // 
             // btnReset
             // 
-            btnReset.Location = new Point(776, 319);
+            btnReset.Location = new Point(887, 425);
             btnReset.Margin = new Padding(2, 1, 2, 1);
             btnReset.Name = "btnReset";
-            btnReset.Size = new Size(81, 22);
+            btnReset.Size = new Size(93, 29);
             btnReset.TabIndex = 54;
             btnReset.Text = "Reset";
             btnReset.UseVisualStyleBackColor = true;
@@ -64,10 +59,10 @@
             // btnDelete
             // 
             btnDelete.Enabled = false;
-            btnDelete.Location = new Point(598, 319);
+            btnDelete.Location = new Point(683, 425);
             btnDelete.Margin = new Padding(2, 1, 2, 1);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(81, 22);
+            btnDelete.Size = new Size(93, 29);
             btnDelete.TabIndex = 53;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
@@ -76,10 +71,10 @@
             // btnUpdate
             // 
             btnUpdate.Enabled = false;
-            btnUpdate.Location = new Point(776, 274);
+            btnUpdate.Location = new Point(887, 365);
             btnUpdate.Margin = new Padding(2, 1, 2, 1);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(81, 22);
+            btnUpdate.Size = new Size(93, 29);
             btnUpdate.TabIndex = 52;
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = true;
@@ -87,10 +82,10 @@
             // 
             // btnCreate
             // 
-            btnCreate.Location = new Point(598, 274);
+            btnCreate.Location = new Point(683, 365);
             btnCreate.Margin = new Padding(2, 1, 2, 1);
             btnCreate.Name = "btnCreate";
-            btnCreate.Size = new Size(81, 22);
+            btnCreate.Size = new Size(93, 29);
             btnCreate.TabIndex = 51;
             btnCreate.Text = "Create";
             btnCreate.UseVisualStyleBackColor = true;
@@ -98,10 +93,10 @@
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(827, 62);
+            btnSearch.Location = new Point(945, 83);
             btnSearch.Margin = new Padding(2, 1, 2, 1);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(81, 22);
+            btnSearch.Size = new Size(93, 29);
             btnSearch.TabIndex = 43;
             btnSearch.Text = "Find";
             btnSearch.UseVisualStyleBackColor = true;
@@ -109,55 +104,56 @@
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(72, 63);
+            txtSearch.Location = new Point(82, 84);
             txtSearch.Margin = new Padding(2, 1, 2, 1);
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Find by id, model or manufactory";
-            txtSearch.Size = new Size(748, 23);
+            txtSearch.Size = new Size(854, 27);
             txtSearch.TabIndex = 42;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(10, 64);
+            label4.Location = new Point(11, 85);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(42, 15);
+            label4.Size = new Size(53, 20);
             label4.TabIndex = 41;
             label4.Text = "Search";
             // 
             // txtId
             // 
             txtId.Enabled = false;
-            txtId.Location = new Point(704, 117);
+            txtId.Location = new Point(805, 156);
             txtId.Margin = new Padding(2, 1, 2, 1);
             txtId.Name = "txtId";
             txtId.ReadOnly = true;
-            txtId.Size = new Size(155, 23);
+            txtId.Size = new Size(177, 27);
             txtId.TabIndex = 40;
             // 
             // label2
             // 
             label2.AllowDrop = true;
             label2.AutoSize = true;
-            label2.Location = new Point(588, 118);
+            label2.Location = new Point(672, 157);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(17, 15);
+            label2.Size = new Size(22, 20);
             label2.TabIndex = 38;
             label2.Text = "Id";
             // 
             // dgvTank
             // 
+            dgvTank.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvTank.BackgroundColor = Color.White;
             dgvTank.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTank.Location = new Point(34, 104);
+            dgvTank.Location = new Point(39, 139);
             dgvTank.Margin = new Padding(2, 1, 2, 1);
             dgvTank.Name = "dgvTank";
             dgvTank.ReadOnly = true;
             dgvTank.RowHeadersWidth = 82;
             dgvTank.RowTemplate.Height = 41;
-            dgvTank.Size = new Size(523, 271);
+            dgvTank.Size = new Size(598, 361);
             dgvTank.TabIndex = 37;
             dgvTank.CellDoubleClick += dgvTank_CellDoubleClick;
             // 
@@ -165,71 +161,74 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 19.875F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(348, 13);
+            label1.Location = new Point(398, 17);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(165, 37);
+            label1.Size = new Size(208, 46);
             label1.TabIndex = 36;
             label1.Text = "Mange Tank";
             // 
             // Mode
             // 
             Mode.AutoSize = true;
-            Mode.Location = new Point(588, 166);
+            Mode.Location = new Point(672, 221);
             Mode.Name = "Mode";
-            Mode.Size = new Size(73, 15);
+            Mode.Size = new Size(92, 20);
             Mode.TabIndex = 55;
             Mode.Text = "ModelName";
             // 
             // cbModel
             // 
             cbModel.FormattingEnabled = true;
-            cbModel.Location = new Point(704, 158);
+            cbModel.Location = new Point(805, 211);
+            cbModel.Margin = new Padding(3, 4, 3, 4);
             cbModel.Name = "cbModel";
-            cbModel.Size = new Size(153, 23);
+            cbModel.Size = new Size(174, 28);
             cbModel.TabIndex = 56;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(588, 201);
+            label3.Location = new Point(672, 268);
             label3.Name = "label3";
-            label3.Size = new Size(107, 15);
+            label3.Size = new Size(132, 20);
             label3.TabIndex = 57;
             label3.Text = "ManufactoryName";
             // 
             // cbManufactory
             // 
             cbManufactory.FormattingEnabled = true;
-            cbManufactory.Location = new Point(704, 193);
+            cbManufactory.Location = new Point(805, 257);
+            cbManufactory.Margin = new Padding(3, 4, 3, 4);
             cbManufactory.Name = "cbManufactory";
-            cbManufactory.Size = new Size(153, 23);
+            cbManufactory.Size = new Size(174, 28);
             cbManufactory.TabIndex = 58;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(588, 237);
+            label5.Location = new Point(672, 316);
             label5.Name = "label5";
-            label5.Size = new Size(29, 15);
+            label5.Size = new Size(36, 20);
             label5.TabIndex = 59;
             label5.Text = "Unit";
             // 
             // cbUnit
             // 
             cbUnit.FormattingEnabled = true;
-            cbUnit.Location = new Point(704, 229);
+            cbUnit.Location = new Point(805, 305);
+            cbUnit.Margin = new Padding(3, 4, 3, 4);
             cbUnit.Name = "cbUnit";
-            cbUnit.Size = new Size(153, 23);
+            cbUnit.Size = new Size(174, 28);
             cbUnit.TabIndex = 60;
             // 
             // btnBack
             // 
             btnBack.BackColor = Color.FromArgb(255, 255, 192);
-            btnBack.Location = new Point(704, 400);
+            btnBack.Location = new Point(805, 533);
             btnBack.Margin = new Padding(2, 1, 2, 1);
             btnBack.Name = "btnBack";
-            btnBack.Size = new Size(157, 22);
+            btnBack.Size = new Size(179, 29);
             btnBack.TabIndex = 61;
             btnBack.Text = "Back to Dashboard";
             btnBack.UseVisualStyleBackColor = false;
@@ -237,10 +236,10 @@
             // 
             // btnResetTankDgv
             // 
-            btnResetTankDgv.Location = new Point(34, 400);
+            btnResetTankDgv.Location = new Point(39, 533);
             btnResetTankDgv.Margin = new Padding(2, 1, 2, 1);
             btnResetTankDgv.Name = "btnResetTankDgv";
-            btnResetTankDgv.Size = new Size(118, 22);
+            btnResetTankDgv.Size = new Size(135, 29);
             btnResetTankDgv.TabIndex = 62;
             btnResetTankDgv.Text = "Reset tank data";
             btnResetTankDgv.UseVisualStyleBackColor = true;
@@ -248,9 +247,9 @@
             // 
             // TankGrid
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 448);
+            ClientSize = new Size(1045, 597);
             Controls.Add(btnResetTankDgv);
             Controls.Add(btnBack);
             Controls.Add(cbUnit);
@@ -270,6 +269,7 @@
             Controls.Add(label2);
             Controls.Add(dgvTank);
             Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "TankGrid";
             Text = "TankGrid";
             ((System.ComponentModel.ISupportInitialize)dgvTank).EndInit();
