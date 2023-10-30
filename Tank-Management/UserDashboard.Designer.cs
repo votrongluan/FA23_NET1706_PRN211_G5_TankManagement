@@ -25,7 +25,6 @@
         private void InitializeComponent() {
             label1 = new Label();
             btnLogout = new Button();
-            btnManageDriver = new Button();
             btnViewTankHistory = new Button();
             btnChangeUnit = new Button();
             SuspendLayout();
@@ -47,8 +46,8 @@
             btnLogout.Anchor = AnchorStyles.None;
             btnLogout.BackColor = Color.FromArgb(255, 255, 192);
             btnLogout.Cursor = Cursors.Hand;
-            btnLogout.Location = new Point(255, 318);
-            btnLogout.Margin = new Padding(2, 2, 2, 2);
+            btnLogout.Location = new Point(255, 307);
+            btnLogout.Margin = new Padding(2);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(256, 29);
             btnLogout.TabIndex = 1;
@@ -56,25 +55,12 @@
             btnLogout.UseVisualStyleBackColor = false;
             btnLogout.Click += btnLogout_Click;
             // 
-            // btnManageDriver
-            // 
-            btnManageDriver.Anchor = AnchorStyles.None;
-            btnManageDriver.Cursor = Cursors.Hand;
-            btnManageDriver.Location = new Point(255, 181);
-            btnManageDriver.Margin = new Padding(2, 2, 2, 2);
-            btnManageDriver.Name = "btnManageDriver";
-            btnManageDriver.Size = new Size(256, 29);
-            btnManageDriver.TabIndex = 2;
-            btnManageDriver.Text = "Manage Tank Driver";
-            btnManageDriver.UseVisualStyleBackColor = true;
-            btnManageDriver.Click += btnManageDriver_Click;
-            // 
             // btnViewTankHistory
             // 
             btnViewTankHistory.Anchor = AnchorStyles.None;
             btnViewTankHistory.Cursor = Cursors.Hand;
-            btnViewTankHistory.Location = new Point(255, 228);
-            btnViewTankHistory.Margin = new Padding(2, 2, 2, 2);
+            btnViewTankHistory.Location = new Point(255, 199);
+            btnViewTankHistory.Margin = new Padding(2);
             btnViewTankHistory.Name = "btnViewTankHistory";
             btnViewTankHistory.Size = new Size(256, 29);
             btnViewTankHistory.TabIndex = 3;
@@ -86,8 +72,8 @@
             // 
             btnChangeUnit.Anchor = AnchorStyles.None;
             btnChangeUnit.Cursor = Cursors.Hand;
-            btnChangeUnit.Location = new Point(255, 273);
-            btnChangeUnit.Margin = new Padding(2, 2, 2, 2);
+            btnChangeUnit.Location = new Point(255, 251);
+            btnChangeUnit.Margin = new Padding(2);
             btnChangeUnit.Name = "btnChangeUnit";
             btnChangeUnit.Size = new Size(256, 29);
             btnChangeUnit.TabIndex = 4;
@@ -102,10 +88,9 @@
             ClientSize = new Size(749, 475);
             Controls.Add(btnChangeUnit);
             Controls.Add(btnViewTankHistory);
-            Controls.Add(btnManageDriver);
             Controls.Add(btnLogout);
             Controls.Add(label1);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "UserDashboard";
             Text = "UserDashboard";
             ResumeLayout(false);
@@ -116,7 +101,6 @@
 
         private Label label1;
         private Button btnLogout;
-        private Button btnManageDriver;
         private Button btnViewTankHistory;
         private Button btnChangeUnit;
     }

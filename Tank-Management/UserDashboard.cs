@@ -15,8 +15,7 @@ namespace Tank_Management {
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void btnManageDriver_Click(object sender, EventArgs e)
-        {
+        private void btnManageDriver_Click(object sender, EventArgs e) {
             var manageDriver = new DriverTank();
             manageDriver.Show();
             this.Hide();
