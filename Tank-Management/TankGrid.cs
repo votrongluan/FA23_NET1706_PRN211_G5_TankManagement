@@ -79,6 +79,8 @@ namespace Tank_Management
             this.StartPosition = FormStartPosition.CenterScreen;
 
             LoadDriver();
+            LoadModel();
+            LoadManufactory();
             LoadUnit();
         }
 
@@ -211,7 +213,7 @@ namespace Tank_Management
             enableCreate();
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void btnSearch_Click_1(object sender, EventArgs e)
         {
             var search = txtSearch.Text;
             LoadDriver(search);
