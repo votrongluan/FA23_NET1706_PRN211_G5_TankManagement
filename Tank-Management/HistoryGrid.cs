@@ -50,9 +50,18 @@ namespace Tank_Management {
         }
 
         private void button1_Click(object sender, EventArgs e) {
-            UserDashboard userDashboard = new UserDashboard();
-            userDashboard.Show();
-            this.Hide();
+            string role = Program.user.Role.Description;
+            if (role.Equals("ad"))
+            {
+                AdminDashboard adminDashboard = new AdminDashboard();
+                adminDashboard.Show();
+                this.Hide();
+            } else
+            {
+                UserDashboard userDashboard = new UserDashboard();
+                userDashboard.Show();
+                this.Hide();
+            }
         }
     }
 }

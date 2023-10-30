@@ -117,7 +117,7 @@ namespace Tank_Management {
         private void btnSearch_Click(object sender, EventArgs e) {
             var source = new BindingSource();
             source.DataSource = _modelRepository.GetAll()
-                .Where(x => x.Name.Contains(txtSearch.Text) || x.Id == int.Parse(txtId.Text))
+                .Where(x => x.Name.Contains(txtSearch.Text) || x.Id.ToString().Contains(txtSearch.Text))
                 .ToList();
             dgvListModels.DataSource = source.DataSource;
         }
