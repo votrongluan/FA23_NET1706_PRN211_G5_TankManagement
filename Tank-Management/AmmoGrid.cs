@@ -269,16 +269,6 @@ namespace Tank_Management
             enableCreate();
         }
 
-        private void dgvAmmo_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtId.Text = dgvAmmo.Rows[e.RowIndex].Cells[0].Value.ToString();
-            txtName.Text = dgvAmmo.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtPrice.Text = dgvAmmo.Rows[e.RowIndex].Cells[2].Value.ToString();
-            txtWeight.Text = dgvAmmo.Rows[e.RowIndex].Cells[3].Value.ToString();
-
-            disableCreate();
-        }
-
         private void dgvAmmo_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
             txtId.Text = dgvAmmo.Rows[e.RowIndex].Cells[0].Value.ToString();
