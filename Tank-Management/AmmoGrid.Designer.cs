@@ -178,8 +178,8 @@
             txtSearch.Location = new Point(59, 6);
             txtSearch.Margin = new Padding(2);
             txtSearch.Name = "txtSearch";
-            txtSearch.PlaceholderText = "Find by id, model or manufactory";
-            txtSearch.Size = new Size(582, 27);
+            txtSearch.PlaceholderText = "Find by name, price , weight";
+            txtSearch.Size = new Size(854, 27);
             txtSearch.TabIndex = 43;
             // 
             // label4
@@ -241,7 +241,7 @@
             dgvAmmo.RowTemplate.Height = 41;
             dgvAmmo.Size = new Size(737, 361);
             dgvAmmo.TabIndex = 37;
-            dgvAmmo.CellContentClick += dgvAmmo_CellContentClick;
+            dgvAmmo.CellDoubleClick += dgvAmmo_CellDoubleClick_1;
             // 
             // label1
             // 
