@@ -34,7 +34,6 @@
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
-            label8 = new Label();
             txtDetail = new TextBox();
             txtName = new TextBox();
             cbAmmoId = new ComboBox();
@@ -50,6 +49,7 @@
             nudPrice = new NumericUpDown();
             nudShootingRange = new NumericUpDown();
             panel1 = new Panel();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvListModels).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudWeight).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudMaxSpeed).BeginInit();
@@ -65,13 +65,13 @@
             dgvListModels.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvListModels.BackgroundColor = Color.White;
             dgvListModels.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvListModels.Location = new Point(294, 66);
+            dgvListModels.Location = new Point(347, 66);
             dgvListModels.Margin = new Padding(2);
             dgvListModels.Name = "dgvListModels";
             dgvListModels.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             dgvListModels.RowTemplate.Height = 33;
             dgvListModels.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvListModels.Size = new Size(755, 502);
+            dgvListModels.Size = new Size(700, 496);
             dgvListModels.TabIndex = 0;
             dgvListModels.CellDoubleClick += dgvListModels_CellDoubleClick;
             // 
@@ -79,7 +79,7 @@
             // 
             btnBackToDashboard.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnBackToDashboard.BackColor = Color.FromArgb(255, 255, 192);
-            btnBackToDashboard.Location = new Point(587, 513);
+            btnBackToDashboard.Location = new Point(534, 513);
             btnBackToDashboard.Margin = new Padding(2);
             btnBackToDashboard.Name = "btnBackToDashboard";
             btnBackToDashboard.Size = new Size(166, 27);
@@ -100,7 +100,7 @@
             // 
             // txtId
             // 
-            txtId.Location = new Point(126, 101);
+            txtId.Location = new Point(146, 101);
             txtId.Margin = new Padding(2);
             txtId.Name = "txtId";
             txtId.ReadOnly = true;
@@ -113,9 +113,9 @@
             lblWeight.Location = new Point(10, 138);
             lblWeight.Margin = new Padding(2, 0, 2, 0);
             lblWeight.Name = "lblWeight";
-            lblWeight.Size = new Size(56, 20);
+            lblWeight.Size = new Size(88, 20);
             lblWeight.TabIndex = 6;
-            lblWeight.Text = "Weight";
+            lblWeight.Text = "Weight(ton)";
             // 
             // label2
             // 
@@ -123,9 +123,9 @@
             label2.Location = new Point(10, 176);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(83, 20);
+            label2.Size = new Size(127, 20);
             label2.TabIndex = 7;
-            label2.Text = "Max Speed";
+            label2.Text = "Max Speed(km/h)";
             // 
             // label3
             // 
@@ -163,9 +163,9 @@
             label6.Location = new Point(10, 324);
             label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(41, 20);
+            label6.Size = new Size(59, 20);
             label6.TabIndex = 11;
-            label6.Text = "Price";
+            label6.Text = "Price($)";
             // 
             // label7
             // 
@@ -177,19 +177,9 @@
             label7.TabIndex = 12;
             label7.Text = "Name";
             // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(10, 401);
-            label8.Margin = new Padding(2, 0, 2, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(115, 20);
-            label8.TabIndex = 13;
-            label8.Text = "Shooting Range";
-            // 
             // txtDetail
             // 
-            txtDetail.Location = new Point(126, 209);
+            txtDetail.Location = new Point(146, 209);
             txtDetail.Margin = new Padding(2);
             txtDetail.Name = "txtDetail";
             txtDetail.Size = new Size(145, 27);
@@ -197,7 +187,7 @@
             // 
             // txtName
             // 
-            txtName.Location = new Point(126, 361);
+            txtName.Location = new Point(146, 361);
             txtName.Margin = new Padding(2);
             txtName.Name = "txtName";
             txtName.Size = new Size(145, 27);
@@ -207,7 +197,7 @@
             // 
             cbAmmoId.DropDownStyle = ComboBoxStyle.DropDownList;
             cbAmmoId.FormattingEnabled = true;
-            cbAmmoId.Location = new Point(126, 281);
+            cbAmmoId.Location = new Point(146, 281);
             cbAmmoId.Margin = new Padding(2);
             cbAmmoId.Name = "cbAmmoId";
             cbAmmoId.Size = new Size(145, 28);
@@ -283,15 +273,16 @@
             // 
             // nudWeight
             // 
-            nudWeight.Location = new Point(126, 138);
+            nudWeight.Location = new Point(146, 138);
             nudWeight.Margin = new Padding(2);
+            nudWeight.Maximum = new decimal(new int[] { 500, 0, 0, 0 });
             nudWeight.Name = "nudWeight";
             nudWeight.Size = new Size(144, 27);
             nudWeight.TabIndex = 28;
             // 
             // nudMaxSpeed
             // 
-            nudMaxSpeed.Location = new Point(126, 174);
+            nudMaxSpeed.Location = new Point(146, 174);
             nudMaxSpeed.Margin = new Padding(2);
             nudMaxSpeed.Name = "nudMaxSpeed";
             nudMaxSpeed.Size = new Size(144, 27);
@@ -299,24 +290,27 @@
             // 
             // nudMaxNoDriver
             // 
-            nudMaxNoDriver.Location = new Point(126, 244);
+            nudMaxNoDriver.Location = new Point(146, 244);
             nudMaxNoDriver.Margin = new Padding(2);
+            nudMaxNoDriver.Maximum = new decimal(new int[] { 5, 0, 0, 0 });
             nudMaxNoDriver.Name = "nudMaxNoDriver";
             nudMaxNoDriver.Size = new Size(144, 27);
             nudMaxNoDriver.TabIndex = 30;
             // 
             // nudPrice
             // 
-            nudPrice.Location = new Point(126, 322);
+            nudPrice.Location = new Point(146, 322);
             nudPrice.Margin = new Padding(2);
+            nudPrice.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
             nudPrice.Name = "nudPrice";
             nudPrice.Size = new Size(144, 27);
             nudPrice.TabIndex = 31;
             // 
             // nudShootingRange
             // 
-            nudShootingRange.Location = new Point(126, 399);
+            nudShootingRange.Location = new Point(146, 399);
             nudShootingRange.Margin = new Padding(2);
+            nudShootingRange.Maximum = new decimal(new int[] { 5000, 0, 0, 0 });
             nudShootingRange.Name = "nudShootingRange";
             nudShootingRange.Size = new Size(144, 27);
             nudShootingRange.TabIndex = 32;
@@ -326,10 +320,20 @@
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.Controls.Add(btnReset);
             panel1.Controls.Add(btnBackToDashboard);
-            panel1.Location = new Point(294, 66);
+            panel1.Location = new Point(347, 66);
             panel1.Name = "panel1";
-            panel1.Size = new Size(755, 542);
+            panel1.Size = new Size(702, 542);
             panel1.TabIndex = 33;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(10, 401);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(138, 20);
+            label1.TabIndex = 13;
+            label1.Text = "Shooting Range(m)";
             // 
             // ModelGrid
             // 
@@ -349,7 +353,7 @@
             Controls.Add(cbAmmoId);
             Controls.Add(txtName);
             Controls.Add(txtDetail);
-            Controls.Add(label8);
+            Controls.Add(label1);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -405,5 +409,6 @@
         private NumericUpDown nudPrice;
         private NumericUpDown nudShootingRange;
         private Panel panel1;
+        private Label label1;
     }
 }
