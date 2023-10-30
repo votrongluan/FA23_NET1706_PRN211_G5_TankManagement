@@ -13,17 +13,14 @@ using System.Xml.Linq;
 using static Azure.Core.HttpHeader;
 using static Tank_Management.DriverGrid;
 
-namespace Tank_Management
-{
-    public partial class TankGrid : Form
-    {
+namespace Tank_Management {
+    public partial class TankGrid : Form {
         private UnitRepository unitRepository = new UnitRepository();
         private ModelRepository modelRepository = new ModelRepository();
         private ManufactoryRepository manufactoryRepository = new ManufactoryRepository();
         private TankRepository tankRepository = new TankRepository();
         internal record DriverData(int Id, string Model, string Manufactory, string Unit);
-        private void LoadUnit()
-        {
+        private void LoadUnit() {
             cbUnit.DataSource = unitRepository.GetAll()
                 .Select(u => new { u.Id, u.Name })
                 .ToList();
@@ -32,8 +29,7 @@ namespace Tank_Management
             cbUnit.SelectedIndex = 0;
         }
 
-        private void LoadModel()
-        {
+        private void LoadModel() {
             cbModel.DataSource = modelRepository.GetAll()
                 .Select(u => new { u.Id, u.Name })
                 .ToList();
@@ -42,8 +38,7 @@ namespace Tank_Management
             cbModel.SelectedIndex = 0;
         }
 
-        private void LoadManufactory()
-        {
+        private void LoadManufactory() {
             cbManufactory.DataSource = manufactoryRepository.GetAll()
                 .Select(u => new { u.Id, u.Name })
                 .ToList();
@@ -52,8 +47,7 @@ namespace Tank_Management
             cbManufactory.SelectedIndex = 0;
         }
 
-        private void LoadDriver(string search = "")
-        {
+        private void LoadDriver(string search = "") {
             var drivers = tankRepository.GetAll()
                 .Select(t => new DriverData(
                     t.Id,
@@ -63,8 +57,7 @@ namespace Tank_Management
                 ))
                 .ToList();
 
-            if (!string.IsNullOrEmpty(search))
-            {
+            if (!string.IsNullOrEmpty(search)) {
                 drivers = drivers
                     .Where(t => t.Model.Contains(search, StringComparison.OrdinalIgnoreCase) || t.Manufactory.Contains(search, StringComparison.OrdinalIgnoreCase) || t.Unit.Contains(search, StringComparison.OrdinalIgnoreCase))
                     .ToList();
@@ -73,8 +66,7 @@ namespace Tank_Management
             dgvTank.DataSource = drivers;
         }
 
-        public TankGrid()
-        {
+        public TankGrid() {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
 
@@ -84,37 +76,32 @@ namespace Tank_Management
             LoadUnit();
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
-        {
+        private void btnBack_Click(object sender, EventArgs e) {
             var adminDashboard = new AdminDashboard();
             adminDashboard.Show();
             this.Hide();
         }
 
-        private void disableCreate()
-        {
+        private void disableCreate() {
             btnCreate.Enabled = false;
             btnDelete.Enabled = true;
             btnUpdate.Enabled = true;
         }
 
-        private void enableCreate()
-        {
+        private void enableCreate() {
             btnCreate.Enabled = true;
             btnDelete.Enabled = false;
             btnUpdate.Enabled = false;
         }
 
-        private void clearTextBox()
-        {
+        private void clearTextBox() {
             txtId.Text = "";
             cbModel.SelectedIndex = 0;
             cbManufactory.SelectedIndex = 0;
             cbUnit.SelectedIndex = 0;
         }
 
-        private void dgvTank_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
+        private void dgvTank_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
             // Display the selected row's data in TextBoxes
             txtId.Text = dgvTank.Rows[e.RowIndex].Cells[0].Value.ToString();
             cbModel.Text = dgvTank.Rows[e.RowIndex].Cells[1].Value.ToString();
@@ -125,16 +112,14 @@ namespace Tank_Management
             disableCreate();
         }
 
-        private void btnCreate_Click(object sender, EventArgs e)
-        {
+        private void btnCreate_Click(object sender, EventArgs e) {
             // Load data from TextBoxes
             var modelId = int.Parse(cbModel.SelectedIndex.ToString());
             var manufactoryId = int.Parse(cbManufactory.SelectedIndex.ToString());
             var unitId = int.Parse(cbUnit.SelectedValue.ToString());
 
             // Create new driver
-            var tank = new Tank()
-            {
+            var tank = new Tank() {
                 ModelId = modelId,
                 ManufactoryId = manufactoryId,
                 UnitId = unitId,
@@ -148,8 +133,7 @@ namespace Tank_Management
             clearTextBox();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
+        private void btnDelete_Click(object sender, EventArgs e) {
             // Load the id from TextBox
             var id = int.Parse(txtId.Text);
 
@@ -157,30 +141,25 @@ namespace Tank_Management
             var tank = tankRepository.GetAll().Where(d => d.Id == id).FirstOrDefault();
 
             // Delete the driver
-            try
-            {
+            try {
                 tankRepository.Delete(tank);
 
                 // Reload data
                 LoadDriver();
                 clearTextBox();
                 enableCreate();
-            }
-            catch (Exception)
-            {
+            } catch (Exception) {
                 // Show the error message
                 MessageBox.Show("Can not delete this driver!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
-        {
+        private void btnReset_Click(object sender, EventArgs e) {
             clearTextBox();
             enableCreate();
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
+        private void btnUpdate_Click(object sender, EventArgs e) {
             // Load data from TextBoxes
             var id = int.Parse(txtId.Text);
             var modelId = int.Parse(cbModel.SelectedIndex.ToString());
@@ -189,8 +168,7 @@ namespace Tank_Management
 
             // Get the driver by id
             var driver = tankRepository.GetAll().Where(d => d.Id == id).FirstOrDefault();
-            if (driver != null)
-            {
+            if (driver != null) {
                 // Update the driver
                 driver.ModelId = modelId;
                 driver.ManufactoryId = manufactoryId;
@@ -206,15 +184,13 @@ namespace Tank_Management
             }
         }
 
-        private void btnResetTankDgv_Click(object sender, EventArgs e)
-        {
+        private void btnResetTankDgv_Click(object sender, EventArgs e) {
             LoadDriver();
             clearTextBox();
             enableCreate();
         }
 
-        private void btnSearch_Click_1(object sender, EventArgs e)
-        {
+        private void btnSearch_Click_1(object sender, EventArgs e) {
             var search = txtSearch.Text;
             LoadDriver(search);
         }

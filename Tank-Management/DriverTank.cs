@@ -12,10 +12,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Tank_Management.ChangeUnit;
 
-namespace Tank_Management
-{
-    public partial class DriverTank : Form
-    {
+namespace Tank_Management {
+    public partial class DriverTank : Form {
         private TankRepository tankRepository = new TankRepository();
         private TankDriverRepository tankDriverRepository = new TankDriverRepository();
         private DriverRepository driverRepository = new DriverRepository();
@@ -25,8 +23,7 @@ namespace Tank_Management
         internal record TData(string Driver_Name, string Id_Card, int Tank_Id, string Model);
         private Unit currentUnit = null;
 
-        private void setCurrentUnit()
-        {
+        private void setCurrentUnit() {
             var unit = unitManagerRepository.GetAll()
                  .Where(um => um.UserId == Program.user.Id)
                  .Select(um => um.Unit)
@@ -35,12 +32,10 @@ namespace Tank_Management
             currentUnit = unit;
         }
 
-        private void LoadTankIdCbx()
-        {
+        private void LoadTankIdCbx() {
             var tanks = tankRepository.GetAll()
                 .Where(t => t.UnitId == currentUnit.Id)
-                .Select(t => new
-                {
+                .Select(t => new {
                     Id = t.Id,
                     Model = t.Model.Name,
                     Display = t.Model.Name + " - " + t.Id
@@ -52,8 +47,7 @@ namespace Tank_Management
             cbxTankId.ValueMember = "Id";
         }
 
-        private void LoadTank(string search = "")
-        {
+        private void LoadTank(string search = "") {
             var driverWithoutTank = driverRepository.GetAll()
                 .Where(d => d.UnitId == currentUnit.Id)
                 .Select(d => new TData(
@@ -80,8 +74,7 @@ namespace Tank_Management
 
             var tanks = driverWithoutTank.Concat(driverWithTank).ToList();
 
-            if (search != "")
-            {
+            if (search != "") {
                 tanks = tanks.Where(t =>
                     (t.Driver_Name != null && t.Driver_Name.Contains(search)) ||
                     (t.Id_Card != null && t.Id_Card.Contains(search)) ||
@@ -92,14 +85,12 @@ namespace Tank_Management
 
             dgvTank.DataSource = tanks;
 
-            if (dgvTank.Rows.Count > 0)
-            {
+            if (dgvTank.Rows.Count > 0) {
                 txtDriverIdCard.Text = dgvTank.Rows[0].Cells[0].Value.ToString();
             }
         }
 
-        public DriverTank()
-        {
+        public DriverTank() {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
 
@@ -108,33 +99,28 @@ namespace Tank_Management
             LoadTankIdCbx();
         }
 
-        private void btnResetTankDgv_Click(object sender, EventArgs e)
-        {
+        private void btnResetTankDgv_Click(object sender, EventArgs e) {
             LoadTank();
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
+        private void btnSearch_Click(object sender, EventArgs e) {
             // Get the search keyword
             string keyword = txtSearch.Text;
             LoadTank(keyword);
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
-        {
+        private void btnBack_Click(object sender, EventArgs e) {
             var userDashboard = new UserDashboard();
             userDashboard.Show();
             this.Hide();
         }
 
-        private void dgvTank_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
+        private void dgvTank_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
             // Display the tank id in the txtTankId
             txtDriverIdCard.Text = dgvTank.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
 
-        private void btnChange_Click(object sender, EventArgs e)
-        {
+        private void btnChange_Click(object sender, EventArgs e) {
             // Get the tank id_Card and tank id
             string idCard = txtDriverIdCard.Text;
 
@@ -144,19 +130,15 @@ namespace Tank_Management
                 .FirstOrDefault();
             int tankId = int.Parse(txtDriverIdCard.Text);
 
-            if (driver != null)
-            {
+            if (driver != null) {
                 // add the TankDriver table with the new tank id, driver id
-                var tankDriver = new TankDriver()
-                {
+                var tankDriver = new TankDriver() {
                     TankId = tankId,
                     DriverId = driver.Id
                 };
 
                 tankDriverRepository.Add(tankDriver);
-            }
-            else
-            {
+            } else {
                 // Show error message with icon
                 MessageBox.Show("Error has occured", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

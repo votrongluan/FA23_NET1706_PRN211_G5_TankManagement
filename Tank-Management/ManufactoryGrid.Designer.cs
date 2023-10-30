@@ -58,6 +58,7 @@
             // manufactorydgv
             // 
             manufactorydgv.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            manufactorydgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             manufactorydgv.BackgroundColor = Color.White;
             manufactorydgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             manufactorydgv.Location = new Point(14, 131);
@@ -65,7 +66,7 @@
             manufactorydgv.Name = "manufactorydgv";
             manufactorydgv.RowHeadersWidth = 51;
             manufactorydgv.RowTemplate.Height = 25;
-            manufactorydgv.Size = new Size(592, 417);
+            manufactorydgv.Size = new Size(615, 417);
             manufactorydgv.TabIndex = 1;
             manufactorydgv.CellDoubleClick += manufactorydgv_CellDoubleClick;
             // 
@@ -187,13 +188,13 @@
             searchtxt.Margin = new Padding(3, 4, 3, 4);
             searchtxt.Name = "searchtxt";
             searchtxt.PlaceholderText = "Find by id or model";
-            searchtxt.Size = new Size(439, 27);
+            searchtxt.Size = new Size(462, 27);
             searchtxt.TabIndex = 13;
             // 
             // btnSearch
             // 
             btnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnSearch.Location = new Point(507, 13);
+            btnSearch.Location = new Point(530, 13);
             btnSearch.Margin = new Padding(3, 4, 3, 4);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(85, 31);

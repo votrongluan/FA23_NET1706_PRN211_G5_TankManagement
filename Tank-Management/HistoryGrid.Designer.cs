@@ -62,8 +62,9 @@
             dgvHistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvHistory.Location = new Point(118, 128);
             dgvHistory.Name = "dgvHistory";
-            dgvHistory.RowHeadersWidth = 51;
+            dgvHistory.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             dgvHistory.RowTemplate.Height = 29;
+            dgvHistory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvHistory.Size = new Size(678, 274);
             dgvHistory.TabIndex = 0;
             // 

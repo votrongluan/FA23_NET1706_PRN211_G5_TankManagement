@@ -62,22 +62,24 @@
             // dgvListModels
             // 
             dgvListModels.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvListModels.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvListModels.BackgroundColor = Color.White;
             dgvListModels.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvListModels.Location = new Point(294, 38);
+            dgvListModels.Location = new Point(294, 66);
             dgvListModels.Margin = new Padding(2);
             dgvListModels.Name = "dgvListModels";
-            dgvListModels.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dgvListModels.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             dgvListModels.RowTemplate.Height = 33;
-            dgvListModels.Size = new Size(755, 530);
-            dgvListModels.TabIndex = 1;
+            dgvListModels.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvListModels.Size = new Size(755, 502);
+            dgvListModels.TabIndex = 0;
             dgvListModels.CellDoubleClick += dgvListModels_CellDoubleClick;
             // 
             // btnBackToDashboard
             // 
             btnBackToDashboard.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnBackToDashboard.BackColor = Color.FromArgb(255, 255, 192);
-            btnBackToDashboard.Location = new Point(587, 541);
+            btnBackToDashboard.Location = new Point(587, 513);
             btnBackToDashboard.Margin = new Padding(2);
             btnBackToDashboard.Name = "btnBackToDashboard";
             btnBackToDashboard.Size = new Size(166, 27);
@@ -250,7 +252,7 @@
             // btnReset
             // 
             btnReset.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnReset.Location = new Point(0, 543);
+            btnReset.Location = new Point(0, 515);
             btnReset.Margin = new Padding(2);
             btnReset.Name = "btnReset";
             btnReset.Size = new Size(90, 27);
@@ -324,9 +326,9 @@
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.Controls.Add(btnReset);
             panel1.Controls.Add(btnBackToDashboard);
-            panel1.Location = new Point(294, 38);
+            panel1.Location = new Point(294, 66);
             panel1.Name = "panel1";
-            panel1.Size = new Size(755, 570);
+            panel1.Size = new Size(755, 542);
             panel1.TabIndex = 33;
             // 
             // ModelGrid
