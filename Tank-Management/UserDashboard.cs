@@ -20,7 +20,7 @@ namespace Tank_Management
 
         private void btnManageDriver_Click(object sender, EventArgs e)
         {
-            var manageDriver = new DriverGrid();
+            var manageDriver = new DriverTank();
             manageDriver.Show();
             this.Hide();
         }

@@ -114,7 +114,7 @@ namespace Tank_Management
             var unitId = int.Parse(cbxUnit.SelectedValue.ToString());
 
             // Check the idCard with regex for indentity card
-            if (!System.Text.RegularExpressions.Regex.IsMatch(idCard, @"^\d{10,}$"))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(idCard, @"^\d{12}$"))
             {
                 MessageBox.Show("Identity is invalid", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -168,11 +168,12 @@ namespace Tank_Management
                 LoadDriver();
                 clearTextBox();
                 enableCreate();
-            } catch (Exception)
+            }
+            catch (Exception)
             {
                 // Show the error message
                 MessageBox.Show("Can not delete this driver!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }  
+            }
         }
 
         private void btnReset_Click(object sender, EventArgs e)
