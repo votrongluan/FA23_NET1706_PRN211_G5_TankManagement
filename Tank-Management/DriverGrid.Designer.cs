@@ -65,8 +65,7 @@
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(959, 78);
-            btnSearch.Margin = new Padding(2);
+            btnSearch.Location = new Point(1752, 124);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(92, 29);
             btnSearch.TabIndex = 23;
@@ -76,11 +75,10 @@
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(96, 80);
-            txtSearch.Margin = new Padding(2);
+            txtSearch.Location = new Point(131, 127);
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Find by id, model or manufactory";
-            txtSearch.Size = new Size(854, 27);
+            txtSearch.Size = new Size(1603, 39);
             txtSearch.TabIndex = 22;
             // 
             // label4
@@ -96,8 +94,7 @@
             // btnBack
             // 
             btnBack.BackColor = Color.FromArgb(255, 255, 192);
-            btnBack.Location = new Point(872, 515);
-            btnBack.Margin = new Padding(2);
+            btnBack.Location = new Point(1610, 823);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(180, 29);
             btnBack.TabIndex = 20;
@@ -108,8 +105,7 @@
             // txtId
             // 
             txtId.Enabled = false;
-            txtId.Location = new Point(829, 151);
-            txtId.Margin = new Padding(2);
+            txtId.Location = new Point(1540, 240);
             txtId.Name = "txtId";
             txtId.ReadOnly = true;
             txtId.Size = new Size(224, 27);
@@ -118,8 +114,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(756, 191);
-            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Location = new Point(1421, 305);
             label3.Name = "label3";
             label3.Size = new Size(55, 20);
             label3.TabIndex = 16;
@@ -129,8 +124,7 @@
             // 
             label2.AllowDrop = true;
             label2.AutoSize = true;
-            label2.Location = new Point(756, 152);
-            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Location = new Point(1421, 243);
             label2.Name = "label2";
             label2.Size = new Size(22, 20);
             label2.TabIndex = 15;
@@ -146,7 +140,7 @@
             dgvDriver.ReadOnly = true;
             dgvDriver.RowHeadersWidth = 82;
             dgvDriver.RowTemplate.Height = 41;
-            dgvDriver.Size = new Size(702, 361);
+            dgvDriver.Size = new Size(1335, 578);
             dgvDriver.TabIndex = 14;
             dgvDriver.CellContentClick += dgvDriver_CellDoubleClick;
             // 
@@ -163,8 +157,7 @@
             // 
             // txtIdCard
             // 
-            txtIdCard.Location = new Point(829, 191);
-            txtIdCard.Margin = new Padding(2);
+            txtIdCard.Location = new Point(1540, 305);
             txtIdCard.Name = "txtIdCard";
             txtIdCard.Size = new Size(224, 27);
             txtIdCard.TabIndex = 25;
@@ -172,8 +165,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(756, 230);
-            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Location = new Point(1421, 367);
             label5.Name = "label5";
             label5.Size = new Size(49, 20);
             label5.TabIndex = 26;
@@ -181,8 +173,7 @@
             // 
             // txtName
             // 
-            txtName.Location = new Point(829, 230);
-            txtName.Margin = new Padding(2);
+            txtName.Location = new Point(1540, 367);
             txtName.Name = "txtName";
             txtName.Size = new Size(224, 27);
             txtName.TabIndex = 27;
@@ -190,8 +181,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(756, 271);
-            label6.Margin = new Padding(2, 0, 2, 0);
+            label6.Location = new Point(1421, 432);
             label6.Name = "label6";
             label6.Size = new Size(50, 20);
             label6.TabIndex = 28;
@@ -199,8 +189,7 @@
             // 
             // txtPhone
             // 
-            txtPhone.Location = new Point(829, 266);
-            txtPhone.Margin = new Padding(2);
+            txtPhone.Location = new Point(1540, 425);
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new Size(224, 27);
             txtPhone.TabIndex = 29;
@@ -208,8 +197,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(753, 312);
-            label7.Margin = new Padding(2, 0, 2, 0);
+            label7.Location = new Point(1417, 498);
             label7.Name = "label7";
             label7.Size = new Size(36, 20);
             label7.TabIndex = 30;
@@ -218,16 +206,14 @@
             // cbxUnit
             // 
             cbxUnit.FormattingEnabled = true;
-            cbxUnit.Location = new Point(829, 312);
-            cbxUnit.Margin = new Padding(2);
+            cbxUnit.Location = new Point(1540, 498);
             cbxUnit.Name = "cbxUnit";
             cbxUnit.Size = new Size(224, 28);
             cbxUnit.TabIndex = 31;
             // 
             // btnCreate
             // 
-            btnCreate.Location = new Point(959, 362);
-            btnCreate.Margin = new Padding(2);
+            btnCreate.Location = new Point(1752, 578);
             btnCreate.Name = "btnCreate";
             btnCreate.Size = new Size(92, 29);
             btnCreate.TabIndex = 32;
@@ -238,8 +224,7 @@
             // btnUpdate
             // 
             btnUpdate.Enabled = false;
-            btnUpdate.Location = new Point(756, 362);
-            btnUpdate.Margin = new Padding(2);
+            btnUpdate.Location = new Point(1421, 578);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(92, 29);
             btnUpdate.TabIndex = 33;
@@ -250,8 +235,7 @@
             // btnDelete
             // 
             btnDelete.Enabled = false;
-            btnDelete.Location = new Point(756, 419);
-            btnDelete.Margin = new Padding(2);
+            btnDelete.Location = new Point(1421, 670);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(92, 29);
             btnDelete.TabIndex = 34;
@@ -261,8 +245,8 @@
             // 
             // btnReset
             // 
-            btnReset.Location = new Point(959, 419);
-            btnReset.Margin = new Padding(2);
+
+            btnReset.Location = new Point(1752, 670);
             btnReset.Name = "btnReset";
             btnReset.Size = new Size(92, 29);
             btnReset.TabIndex = 35;
@@ -274,7 +258,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1079, 568);
+            ClientSize = new Size(1942, 908);
             Controls.Add(btnReset);
             Controls.Add(btnDelete);
             Controls.Add(btnUpdate);

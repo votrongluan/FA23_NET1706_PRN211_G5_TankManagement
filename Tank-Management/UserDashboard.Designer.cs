@@ -64,7 +64,7 @@
             btnManageDriver.Name = "btnManageDriver";
             btnManageDriver.Size = new Size(416, 46);
             btnManageDriver.TabIndex = 2;
-            btnManageDriver.Text = "Manage Driver";
+            btnManageDriver.Text = "Manage Tank Driver";
             btnManageDriver.UseVisualStyleBackColor = true;
             btnManageDriver.Click += btnManageDriver_Click;
             // 
