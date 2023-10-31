@@ -47,11 +47,14 @@
             dgvAmmo = new DataGridView();
             label1 = new Label();
             txtWeight = new TextBox();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgvAmmo).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // btnReset
             // 
+            btnReset.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnReset.Location = new Point(1011, 427);
             btnReset.Margin = new Padding(2);
             btnReset.Name = "btnReset";
@@ -63,6 +66,7 @@
             // 
             // btnDelete
             // 
+            btnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnDelete.Enabled = false;
             btnDelete.Location = new Point(808, 427);
             btnDelete.Margin = new Padding(2);
@@ -75,6 +79,7 @@
             // 
             // btnUpdate
             // 
+            btnUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnUpdate.Enabled = false;
             btnUpdate.Location = new Point(808, 370);
             btnUpdate.Margin = new Padding(2);
@@ -87,6 +92,7 @@
             // 
             // btnCreate
             // 
+            btnCreate.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnCreate.Location = new Point(1011, 370);
             btnCreate.Margin = new Padding(2);
             btnCreate.Name = "btnCreate";
@@ -98,6 +104,7 @@
             // 
             // label7
             // 
+            label7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label7.AutoSize = true;
             label7.Location = new Point(798, 316);
             label7.Margin = new Padding(2, 0, 2, 0);
@@ -108,6 +115,7 @@
             // 
             // txtPrice
             // 
+            txtPrice.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             txtPrice.Location = new Point(881, 260);
             txtPrice.Margin = new Padding(2);
             txtPrice.Name = "txtPrice";
@@ -116,6 +124,7 @@
             // 
             // label6
             // 
+            label6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label6.AutoSize = true;
             label6.Location = new Point(804, 260);
             label6.Margin = new Padding(2, 0, 2, 0);
@@ -126,6 +135,7 @@
             // 
             // txtName
             // 
+            txtName.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             txtName.Location = new Point(881, 210);
             txtName.Margin = new Padding(2);
             txtName.Name = "txtName";
@@ -134,6 +144,7 @@
             // 
             // label5
             // 
+            label5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label5.AutoSize = true;
             label5.Location = new Point(805, 210);
             label5.Margin = new Padding(2, 0, 2, 0);
@@ -144,7 +155,8 @@
             // 
             // btnResetAmmoDgv
             // 
-            btnResetAmmoDgv.Location = new Point(77, 522);
+            btnResetAmmoDgv.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnResetAmmoDgv.Location = new Point(0, 436);
             btnResetAmmoDgv.Margin = new Padding(2);
             btnResetAmmoDgv.Name = "btnResetAmmoDgv";
             btnResetAmmoDgv.Size = new Size(135, 29);
@@ -155,7 +167,8 @@
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(1011, 86);
+            btnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnSearch.Location = new Point(645, 6);
             btnSearch.Margin = new Padding(2);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(92, 29);
@@ -166,17 +179,18 @@
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(148, 88);
+            txtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtSearch.Location = new Point(59, 6);
             txtSearch.Margin = new Padding(2);
             txtSearch.Name = "txtSearch";
-            txtSearch.PlaceholderText = "Find by id, model or manufactory";
+            txtSearch.PlaceholderText = "Find by name, price , weight";
             txtSearch.Size = new Size(854, 27);
             txtSearch.TabIndex = 43;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(77, 90);
+            label4.Location = new Point(2, 9);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new Size(53, 20);
@@ -185,6 +199,7 @@
             // 
             // btnBack
             // 
+            btnBack.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnBack.BackColor = Color.FromArgb(255, 255, 192);
             btnBack.Location = new Point(924, 523);
             btnBack.Margin = new Padding(2);
@@ -197,6 +212,7 @@
             // 
             // txtId
             // 
+            txtId.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             txtId.Enabled = false;
             txtId.Location = new Point(881, 159);
             txtId.Margin = new Padding(2);
@@ -208,6 +224,7 @@
             // label2
             // 
             label2.AllowDrop = true;
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.Location = new Point(808, 160);
             label2.Margin = new Padding(2, 0, 2, 0);
@@ -218,20 +235,22 @@
             // 
             // dgvAmmo
             // 
+            dgvAmmo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvAmmo.BackgroundColor = Color.White;
             dgvAmmo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvAmmo.Location = new Point(77, 136);
+            dgvAmmo.Location = new Point(56, 136);
             dgvAmmo.Margin = new Padding(2);
             dgvAmmo.Name = "dgvAmmo";
             dgvAmmo.ReadOnly = true;
             dgvAmmo.RowHeadersWidth = 82;
             dgvAmmo.RowTemplate.Height = 41;
-            dgvAmmo.Size = new Size(702, 361);
+            dgvAmmo.Size = new Size(737, 361);
             dgvAmmo.TabIndex = 37;
-            dgvAmmo.CellContentClick += dgvAmmo_CellContentClick;
+            dgvAmmo.CellDoubleClick += dgvAmmo_CellDoubleClick_1;
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 19.875F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(522, 20);
@@ -243,17 +262,30 @@
             // 
             // txtWeight
             // 
+            txtWeight.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             txtWeight.Location = new Point(881, 309);
             txtWeight.Margin = new Padding(2);
             txtWeight.Name = "txtWeight";
             txtWeight.Size = new Size(224, 27);
             txtWeight.TabIndex = 57;
             // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(btnResetAmmoDgv);
+            panel1.Controls.Add(txtSearch);
+            panel1.Controls.Add(btnSearch);
+            panel1.Location = new Point(56, 86);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(737, 465);
+            panel1.TabIndex = 58;
+            // 
             // AmmoGrid
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1182, 668);
+            ClientSize = new Size(1182, 585);
             Controls.Add(txtWeight);
             Controls.Add(btnReset);
             Controls.Add(btnDelete);
@@ -264,18 +296,17 @@
             Controls.Add(label6);
             Controls.Add(txtName);
             Controls.Add(label5);
-            Controls.Add(btnResetAmmoDgv);
-            Controls.Add(btnSearch);
-            Controls.Add(txtSearch);
-            Controls.Add(label4);
             Controls.Add(btnBack);
             Controls.Add(txtId);
             Controls.Add(label2);
             Controls.Add(dgvAmmo);
             Controls.Add(label1);
+            Controls.Add(panel1);
             Name = "AmmoGrid";
             Text = "AmmoGrid";
             ((System.ComponentModel.ISupportInitialize)dgvAmmo).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -301,5 +332,6 @@
         private DataGridView dgvAmmo;
         private Label label1;
         private TextBox txtWeight;
+        private Panel panel1;
     }
 }

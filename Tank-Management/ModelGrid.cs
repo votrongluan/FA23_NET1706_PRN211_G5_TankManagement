@@ -89,17 +89,27 @@ namespace Tank_Management {
             if (res != DialogResult.Yes) return;
             ControlBtnCreateOn();
 
-            var check = CheckInputs();
-            if (!check) {
-                ControlBtnCreateOff();
-                return;
-            }
+            try
+            {
+                var check = CheckInputs();
+                if (!check)
+                {
+                    ControlBtnCreateOff();
+                    return;
+                }
 
-            var model = _modelRepository.GetAll().FirstOrDefault(x => x.Id == int.Parse(txtId.Text));
-            if (model != null) {
-                _modelRepository.Delete(model);
+                var model = _modelRepository.GetAll().FirstOrDefault(x => x.Id == int.Parse(txtId.Text));
+                if (model != null)
+                {
+                    _modelRepository.Delete(model);
+                }
             }
-
+            catch (Exception exception)
+            {
+                MessageBox.Show("The data is saved by another table!", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+            
             LoadData();
             ClearText();
         }
@@ -124,7 +134,23 @@ namespace Tank_Management {
 
         private void LoadData() {
             var source = new BindingSource();
-            source.DataSource = _modelRepository.GetAll().ToList();
+
+            // display all comlumn exclude ammo and tank
+            source.DataSource = _modelRepository.GetAll()
+                .Select(x => new
+                {
+                    x.Id,
+                    x.Name,
+                    x.Weight,
+                    x.MaxSpeed,
+                    x.Detail,
+                    x.MaxNoDriver,
+                    x.Price,
+                    x.ShootingRange,
+                    x.AmmoId
+                })
+                .ToList();
+            
             dgvListModels.DataSource = source.DataSource;
         }
 
@@ -153,10 +179,6 @@ namespace Tank_Management {
             }
 
             return true;
-        }
-
-        private static void ShowErrorMessageBox(string message, string errorLocation) {
-            MessageBox.Show("Error at " + errorLocation + "\n" + message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void ControlBtnCreateOn() {

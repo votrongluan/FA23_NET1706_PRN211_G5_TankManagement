@@ -150,6 +150,9 @@ namespace Tank_Management
             //enable create button
             enableCreate();
 
+            //catch enter button
+            this.AcceptButton = btnCreate;
+
 
         }
         private void btnDelete_Click(object sender, EventArgs e)
@@ -171,6 +174,9 @@ namespace Tank_Management
                     LoadAmmo();
                     clearTextBox();
                     enableCreate();
+
+                    //catch enter button
+                    this.AcceptButton = btnCreate;
                 }
                 catch (Exception)
                 {
@@ -241,6 +247,9 @@ namespace Tank_Management
                     LoadAmmo();
                     clearTextBox();
                     enableCreate();
+
+                    //catch enter button
+                    this.AcceptButton = btnCreate;
                 }
                 catch (Exception)
                 {
@@ -267,6 +276,20 @@ namespace Tank_Management
         {
             clearTextBox();
             enableCreate();
+
+            //catch enter button
+            this.AcceptButton = btnCreate;
         }
+
+        private void dgvAmmo_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            txtId.Text = dgvAmmo.Rows[e.RowIndex].Cells[0].Value.ToString();
+            txtName.Text = dgvAmmo.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtPrice.Text = dgvAmmo.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtWeight.Text = dgvAmmo.Rows[e.RowIndex].Cells[3].Value.ToString();
+
+            disableCreate();
+        }
+
     }
 }

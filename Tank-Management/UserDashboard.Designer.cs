@@ -50,7 +50,8 @@
             btnLogout.Anchor = AnchorStyles.None;
             btnLogout.BackColor = Color.FromArgb(255, 255, 192);
             btnLogout.Cursor = Cursors.Hand;
-            btnLogout.Location = new Point(414, 449);
+            btnLogout.Location = new Point(255, 307);
+            btnLogout.Margin = new Padding(2);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(416, 46);
             btnLogout.TabIndex = 1;
@@ -62,7 +63,8 @@
             // 
             btnViewTankHistory.Anchor = AnchorStyles.None;
             btnViewTankHistory.Cursor = Cursors.Hand;
-            btnViewTankHistory.Location = new Point(414, 305);
+            btnViewTankHistory.Location = new Point(255, 199);
+            btnViewTankHistory.Margin = new Padding(2);
             btnViewTankHistory.Name = "btnViewTankHistory";
             btnViewTankHistory.Size = new Size(416, 46);
             btnViewTankHistory.TabIndex = 3;
@@ -74,7 +76,8 @@
             // 
             btnChangeUnit.Anchor = AnchorStyles.None;
             btnChangeUnit.Cursor = Cursors.Hand;
-            btnChangeUnit.Location = new Point(414, 377);
+            btnChangeUnit.Location = new Point(255, 251);
+            btnChangeUnit.Margin = new Padding(2);
             btnChangeUnit.Name = "btnChangeUnit";
             btnChangeUnit.Size = new Size(416, 46);
             btnChangeUnit.TabIndex = 4;
@@ -91,6 +94,7 @@
             Controls.Add(btnViewTankHistory);
             Controls.Add(btnLogout);
             Controls.Add(label1);
+            Margin = new Padding(2);
             Name = "UserDashboard";
             Text = "UserDashboard";
             ResumeLayout(false);

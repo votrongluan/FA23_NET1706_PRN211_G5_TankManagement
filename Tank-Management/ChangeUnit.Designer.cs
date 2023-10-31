@@ -54,10 +54,11 @@
             // 
             // dgvTank
             // 
+            dgvTank.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvTank.BackgroundColor = Color.White;
             dgvTank.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvTank.Location = new Point(25, 128);
-            dgvTank.Margin = new Padding(2, 2, 2, 2);
+            dgvTank.Margin = new Padding(2);
             dgvTank.Name = "dgvTank";
             dgvTank.ReadOnly = true;
             dgvTank.RowHeadersWidth = 82;
@@ -93,7 +94,7 @@
             txtTankId.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             txtTankId.Enabled = false;
             txtTankId.Location = new Point(810, 150);
-            txtTankId.Margin = new Padding(2, 2, 2, 2);
+            txtTankId.Margin = new Padding(2);
             txtTankId.Name = "txtTankId";
             txtTankId.ReadOnly = true;
             txtTankId.Size = new Size(171, 27);
@@ -104,7 +105,7 @@
             cbxUnitId.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             cbxUnitId.FormattingEnabled = true;
             cbxUnitId.Location = new Point(810, 189);
-            cbxUnitId.Margin = new Padding(2, 2, 2, 2);
+            cbxUnitId.Margin = new Padding(2);
             cbxUnitId.Name = "cbxUnitId";
             cbxUnitId.Size = new Size(171, 28);
             cbxUnitId.TabIndex = 6;
@@ -113,7 +114,7 @@
             // 
             btnChange.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnChange.Location = new Point(887, 240);
-            btnChange.Margin = new Padding(2, 2, 2, 2);
+            btnChange.Margin = new Padding(2);
             btnChange.Name = "btnChange";
             btnChange.Size = new Size(92, 29);
             btnChange.TabIndex = 7;
@@ -126,7 +127,7 @@
             btnBack.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnBack.BackColor = Color.FromArgb(255, 255, 192);
             btnBack.Location = new Point(800, 514);
-            btnBack.Margin = new Padding(2, 2, 2, 2);
+            btnBack.Margin = new Padding(2);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(180, 29);
             btnBack.TabIndex = 8;
@@ -148,7 +149,7 @@
             // 
             txtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtSearch.Location = new Point(59, 6);
-            txtSearch.Margin = new Padding(2, 2, 2, 2);
+            txtSearch.Margin = new Padding(2);
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Find by unit, name, manfactory";
             txtSearch.Size = new Size(489, 27);
@@ -158,7 +159,7 @@
             // 
             btnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnSearch.Location = new Point(552, 6);
-            btnSearch.Margin = new Padding(2, 2, 2, 2);
+            btnSearch.Margin = new Padding(2);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(92, 29);
             btnSearch.TabIndex = 11;
@@ -170,7 +171,7 @@
             // 
             btnResetTankDgv.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnResetTankDgv.Location = new Point(2, 430);
-            btnResetTankDgv.Margin = new Padding(2, 2, 2, 2);
+            btnResetTankDgv.Margin = new Padding(2);
             btnResetTankDgv.Name = "btnResetTankDgv";
             btnResetTankDgv.Size = new Size(135, 29);
             btnResetTankDgv.TabIndex = 12;
@@ -204,7 +205,7 @@
             Controls.Add(dgvTank);
             Controls.Add(label1);
             Controls.Add(panel1);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "ChangeUnit";
             Text = "ChangeUnit";
             ((System.ComponentModel.ISupportInitialize)dgvTank).EndInit();
