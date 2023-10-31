@@ -18,7 +18,8 @@ namespace Tank_Management
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void btnViewTankHistory_Click(object sender, EventArgs e) {
+        private void btnViewTankHistory_Click(object sender, EventArgs e)
+        {
             var historyGrid = new HistoryGrid();
             historyGrid.Show();
             this.Hide();
