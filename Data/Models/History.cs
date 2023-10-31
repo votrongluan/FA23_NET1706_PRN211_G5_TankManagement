@@ -15,6 +15,8 @@ public partial class History
 
     public DateTime? Date { get; set; }
 
+    public bool? IsDelete { get; set; }
+
     public virtual Unit FromUnit { get; set; }
 
     public virtual Tank Tank { get; set; }

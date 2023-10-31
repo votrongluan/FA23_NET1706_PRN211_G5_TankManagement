@@ -15,6 +15,8 @@ public partial class Driver
 
     public int? UnitId { get; set; }
 
+    public bool? IsDelete { get; set; }
+
     public virtual ICollection<TankDriver> TankDrivers { get; set; } = new List<TankDriver>();
 
     public virtual Unit Unit { get; set; }

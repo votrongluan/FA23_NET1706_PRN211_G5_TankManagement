@@ -95,14 +95,21 @@ namespace Tank_Management
         private void dgvDriver_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             // Display the selected row's data in TextBoxes
-            txtId.Text = dgvDriver.Rows[e.RowIndex].Cells[0].Value.ToString();
-            txtIdCard.Text = dgvDriver.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtName.Text = dgvDriver.Rows[e.RowIndex].Cells[2].Value.ToString();
-            txtPhone.Text = dgvDriver.Rows[e.RowIndex].Cells[3].Value.ToString();
-            cbxUnit.Text = dgvDriver.Rows[e.RowIndex].Cells[4].Value.ToString();
+            try
+            {
+                txtId.Text = dgvDriver.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtIdCard.Text = dgvDriver.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txtName.Text = dgvDriver.Rows[e.RowIndex].Cells[2].Value.ToString();
+                txtPhone.Text = dgvDriver.Rows[e.RowIndex].Cells[3].Value.ToString();
+                cbxUnit.Text = dgvDriver.Rows[e.RowIndex].Cells[4].Value.ToString();
 
-            // Disable create button and enable delete and update button
-            disableCreate();
+                // Disable create button and enable delete and update button
+                disableCreate();
+            } catch
+            {
+                // Show the error message
+                MessageBox.Show("Can not select this row!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnCreate_Click(object sender, EventArgs e)

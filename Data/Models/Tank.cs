@@ -13,6 +13,8 @@ public partial class Tank
 
     public int? UnitId { get; set; }
 
+    public bool? IsDelete { get; set; }
+
     public virtual ICollection<History> Histories { get; set; } = new List<History>();
 
     public virtual Manufactory Manufactory { get; set; }

@@ -11,6 +11,8 @@ public partial class TankDriver
 
     public int? DriverId { get; set; }
 
+    public bool? IsDelete { get; set; }
+
     public virtual Driver Driver { get; set; }
 
     public virtual Tank Tank { get; set; }
