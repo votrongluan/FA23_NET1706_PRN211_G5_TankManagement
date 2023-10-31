@@ -11,6 +11,8 @@ public partial class Manufactory
 
     public int? LocationId { get; set; }
 
+    public bool? IsDelete { get; set; }
+
     public virtual Location Location { get; set; }
 
     public virtual ICollection<Tank> Tanks { get; set; } = new List<Tank>();

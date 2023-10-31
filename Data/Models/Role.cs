@@ -9,5 +9,7 @@ public partial class Role
 
     public string Description { get; set; }
 
+    public bool? IsDelete { get; set; }
+
     public virtual ICollection<User> Users { get; set; } = new List<User>();
 }

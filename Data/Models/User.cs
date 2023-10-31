@@ -13,6 +13,8 @@ public partial class User
 
     public int? RoleId { get; set; }
 
+    public bool? IsDelete { get; set; }
+
     public virtual Role Role { get; set; }
 
     public virtual ICollection<UnitManager> UnitManagers { get; set; } = new List<UnitManager>();

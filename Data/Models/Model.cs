@@ -23,6 +23,8 @@ public partial class Model
 
     public int? ShootingRange { get; set; }
 
+    public bool? IsDelete { get; set; }
+
     public virtual Ammo Ammo { get; set; }
 
     public virtual ICollection<Tank> Tanks { get; set; } = new List<Tank>();

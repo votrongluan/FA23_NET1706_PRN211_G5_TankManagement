@@ -9,5 +9,7 @@ public partial class Location
 
     public string Name { get; set; }
 
+    public bool? IsDelete { get; set; }
+
     public virtual ICollection<Manufactory> Manufactories { get; set; } = new List<Manufactory>();
 }
