@@ -39,7 +39,7 @@
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 19.875F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(414, 32);
+            label1.Location = new Point(141, 32);
             label1.Name = "label1";
             label1.Size = new Size(416, 71);
             label1.TabIndex = 0;
@@ -50,10 +50,10 @@
             btnLogout.Anchor = AnchorStyles.None;
             btnLogout.BackColor = Color.FromArgb(255, 255, 192);
             btnLogout.Cursor = Cursors.Hand;
-            btnLogout.Location = new Point(414, 513);
+            btnLogout.Location = new Point(141, 355);
             btnLogout.Margin = new Padding(2);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(416, 84);
+            btnLogout.Size = new Size(416, 50);
             btnLogout.TabIndex = 1;
             btnLogout.Text = "Logout";
             btnLogout.UseVisualStyleBackColor = false;
@@ -63,10 +63,10 @@
             // 
             btnViewTankHistory.Anchor = AnchorStyles.None;
             btnViewTankHistory.Cursor = Cursors.Hand;
-            btnViewTankHistory.Location = new Point(414, 240);
+            btnViewTankHistory.Location = new Point(141, 151);
             btnViewTankHistory.Margin = new Padding(2);
             btnViewTankHistory.Name = "btnViewTankHistory";
-            btnViewTankHistory.Size = new Size(416, 109);
+            btnViewTankHistory.Size = new Size(416, 50);
             btnViewTankHistory.TabIndex = 3;
             btnViewTankHistory.Text = "View Tank History";
             btnViewTankHistory.UseVisualStyleBackColor = true;
@@ -76,10 +76,10 @@
             // 
             btnChangeUnit.Anchor = AnchorStyles.None;
             btnChangeUnit.Cursor = Cursors.Hand;
-            btnChangeUnit.Location = new Point(414, 381);
+            btnChangeUnit.Location = new Point(141, 253);
             btnChangeUnit.Margin = new Padding(2);
             btnChangeUnit.Name = "btnChangeUnit";
-            btnChangeUnit.Size = new Size(416, 97);
+            btnChangeUnit.Size = new Size(416, 50);
             btnChangeUnit.TabIndex = 4;
             btnChangeUnit.Text = "Change Tank Unit";
             btnChangeUnit.UseVisualStyleBackColor = true;
@@ -89,7 +89,7 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1217, 711);
+            ClientSize = new Size(670, 533);
             Controls.Add(btnChangeUnit);
             Controls.Add(btnViewTankHistory);
             Controls.Add(btnLogout);

@@ -31,7 +31,7 @@ namespace Tank_Management {
 
         private void LoadTank(string search = "") {
             var tanks = tankRepository.GetAll()
-                .Where(t => t.UnitId == currentUnit.Id)
+                .Where(t => t.UnitId == currentUnit.Id && (t.IsDelete == false || t.IsDelete == null))
                 .Select(t => new TankData(
                     t.Id,
                     t.Model.Name,
