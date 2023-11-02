@@ -47,11 +47,12 @@ public partial class TmContext : DbContext
     {
         modelBuilder.Entity<Ammo>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Ammo__3213E83F542863E7");
+            entity.HasKey(e => e.Id).HasName("PK__Ammo__3213E83F0A2D7857");
 
             entity.ToTable("Ammo");
 
             entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.IsDelete).HasColumnName("isDelete");
             entity.Property(e => e.Name)
                 .HasMaxLength(50)
                 .HasColumnName("name");
@@ -61,7 +62,7 @@ public partial class TmContext : DbContext
 
         modelBuilder.Entity<Driver>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Driver__3213E83FB738EDDE");
+            entity.HasKey(e => e.Id).HasName("PK__Driver__3213E83F44E5E324");
 
             entity.ToTable("Driver");
 
@@ -71,6 +72,7 @@ public partial class TmContext : DbContext
                 .IsUnicode(false)
                 .IsFixedLength()
                 .HasColumnName("idCard");
+            entity.Property(e => e.IsDelete).HasColumnName("isDelete");
             entity.Property(e => e.Name)
                 .HasMaxLength(50)
                 .HasColumnName("name");
@@ -86,7 +88,7 @@ public partial class TmContext : DbContext
 
         modelBuilder.Entity<History>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__History__3213E83F7C86B5CA");
+            entity.HasKey(e => e.Id).HasName("PK__History__3213E83F03DEAC84");
 
             entity.ToTable("History");
 
@@ -95,6 +97,7 @@ public partial class TmContext : DbContext
                 .HasColumnType("date")
                 .HasColumnName("date");
             entity.Property(e => e.FromUnitId).HasColumnName("fromUnitId");
+            entity.Property(e => e.IsDelete).HasColumnName("isDelete");
             entity.Property(e => e.TankId).HasColumnName("tankId");
             entity.Property(e => e.ToUnitId).HasColumnName("toUnitId");
 
@@ -113,11 +116,12 @@ public partial class TmContext : DbContext
 
         modelBuilder.Entity<Location>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Location__3213E83F8269623B");
+            entity.HasKey(e => e.Id).HasName("PK__Location__3213E83FA8076281");
 
             entity.ToTable("Location");
 
             entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.IsDelete).HasColumnName("isDelete");
             entity.Property(e => e.Name)
                 .HasMaxLength(50)
                 .HasColumnName("name");
@@ -125,11 +129,12 @@ public partial class TmContext : DbContext
 
         modelBuilder.Entity<Manufactory>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Manufact__3213E83F106B0F0B");
+            entity.HasKey(e => e.Id).HasName("PK__Manufact__3213E83FABC29DC6");
 
             entity.ToTable("Manufactory");
 
             entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.IsDelete).HasColumnName("isDelete");
             entity.Property(e => e.LocationId).HasColumnName("locationId");
             entity.Property(e => e.Name)
                 .HasMaxLength(50)
@@ -142,7 +147,7 @@ public partial class TmContext : DbContext
 
         modelBuilder.Entity<Model>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Model__3213E83FBD6E6E1C");
+            entity.HasKey(e => e.Id).HasName("PK__Model__3213E83F9FDF8CE1");
 
             entity.ToTable("Model");
 
@@ -151,6 +156,7 @@ public partial class TmContext : DbContext
             entity.Property(e => e.Detail)
                 .HasMaxLength(255)
                 .HasColumnName("detail");
+            entity.Property(e => e.IsDelete).HasColumnName("isDelete");
             entity.Property(e => e.MaxNoDriver).HasColumnName("maxNoDriver");
             entity.Property(e => e.MaxSpeed).HasColumnName("maxSpeed");
             entity.Property(e => e.Name)
@@ -167,7 +173,7 @@ public partial class TmContext : DbContext
 
         modelBuilder.Entity<Role>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Role__3213E83F0716005F");
+            entity.HasKey(e => e.Id).HasName("PK__Role__3213E83F107FD426");
 
             entity.ToTable("Role");
 
@@ -177,15 +183,17 @@ public partial class TmContext : DbContext
                 .IsUnicode(false)
                 .IsFixedLength()
                 .HasColumnName("description");
+            entity.Property(e => e.IsDelete).HasColumnName("isDelete");
         });
 
         modelBuilder.Entity<Tank>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Tank__3213E83F3E9AF16C");
+            entity.HasKey(e => e.Id).HasName("PK__Tank__3213E83F15A9BC99");
 
             entity.ToTable("Tank");
 
             entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.IsDelete).HasColumnName("isDelete");
             entity.Property(e => e.ManufactoryId).HasColumnName("manufactoryId");
             entity.Property(e => e.ModelId).HasColumnName("modelId");
             entity.Property(e => e.UnitId).HasColumnName("unitId");
@@ -205,12 +213,13 @@ public partial class TmContext : DbContext
 
         modelBuilder.Entity<TankDriver>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__TankDriv__3213E83FCBA6E13A");
+            entity.HasKey(e => e.Id).HasName("PK__TankDriv__3213E83F179C3AC9");
 
             entity.ToTable("TankDriver");
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.DriverId).HasColumnName("driverId");
+            entity.Property(e => e.IsDelete).HasColumnName("isDelete");
             entity.Property(e => e.TankId).HasColumnName("tankId");
 
             entity.HasOne(d => d.Driver).WithMany(p => p.TankDrivers)
@@ -224,11 +233,12 @@ public partial class TmContext : DbContext
 
         modelBuilder.Entity<Unit>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Unit__3213E83F0EC97524");
+            entity.HasKey(e => e.Id).HasName("PK__Unit__3213E83FAE24ECF0");
 
             entity.ToTable("Unit");
 
             entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.IsDelete).HasColumnName("isDelete");
             entity.Property(e => e.Location)
                 .HasMaxLength(50)
                 .HasColumnName("location");
@@ -239,11 +249,12 @@ public partial class TmContext : DbContext
 
         modelBuilder.Entity<UnitManager>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__UnitMana__3213E83F5499F8A4");
+            entity.HasKey(e => e.Id).HasName("PK__UnitMana__3213E83FAD7B248C");
 
             entity.ToTable("UnitManager");
 
             entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.IsDelete).HasColumnName("isDelete");
             entity.Property(e => e.UnitId).HasColumnName("unitId");
             entity.Property(e => e.UserId).HasColumnName("userId");
 
@@ -258,11 +269,12 @@ public partial class TmContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__User__3213E83F0B9D60AD");
+            entity.HasKey(e => e.Id).HasName("PK__User__3213E83FD6D9F9AD");
 
             entity.ToTable("User");
 
             entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.IsDelete).HasColumnName("isDelete");
             entity.Property(e => e.Password)
                 .HasMaxLength(20)
                 .IsUnicode(false)

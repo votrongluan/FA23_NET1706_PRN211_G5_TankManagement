@@ -11,6 +11,8 @@ public partial class Unit
 
     public string Location { get; set; }
 
+    public bool? IsDelete { get; set; }
+
     public virtual ICollection<Driver> Drivers { get; set; } = new List<Driver>();
 
     public virtual ICollection<History> HistoryFromUnits { get; set; } = new List<History>();

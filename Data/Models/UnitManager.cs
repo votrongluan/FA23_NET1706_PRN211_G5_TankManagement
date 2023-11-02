@@ -11,6 +11,8 @@ public partial class UnitManager
 
     public int? UnitId { get; set; }
 
+    public bool? IsDelete { get; set; }
+
     public virtual Unit Unit { get; set; }
 
     public virtual User User { get; set; }

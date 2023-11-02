@@ -12,17 +12,20 @@ CREATE TABLE [Tank] (
 	modelId int,
 	manufactoryId int,
 	unitId int,
+	isDelete bit,
 )
 GO
 CREATE TABLE [Manufactory] (
 	id int identity primary key,
 	name nvarchar(50),
 	locationId int,
+	isDelete bit,
 )
 GO
 CREATE TABLE [Location] (
 	id int identity primary key,
 	name nvarchar(50),
+	isDelete bit,
 )
 GO
 CREATE TABLE [Model] (
@@ -35,6 +38,7 @@ CREATE TABLE [Model] (
 	price int,
 	name nvarchar(50),
 	shootingRange int,
+	isDelete bit,
 )
 GO
 CREATE TABLE [Ammo] (
@@ -42,12 +46,14 @@ CREATE TABLE [Ammo] (
 	name nvarchar(50),
 	price int,
 	weight int,
+	isDelete bit,
 )
 GO
 CREATE TABLE [Unit] (
 	id int identity primary key,
 	name nvarchar(50),
 	location nvarchar(50),
+	isDelete bit,
 )
 GO
 CREATE TABLE [Driver] (
@@ -56,6 +62,7 @@ CREATE TABLE [Driver] (
 	name nvarchar(50),
 	phone nvarchar(10),
 	unitId integer,
+	isDelete bit,
 )
 GO
 CREATE TABLE [History] (
@@ -64,17 +71,20 @@ CREATE TABLE [History] (
 	toUnitId int,
 	tankId int,
 	date date,
+	isDelete bit,
 )
 GO
 CREATE TABLE [TankDriver] (
 	id int identity primary key,
 	tankId int,
 	driverId int,
+	isDelete bit,
 )
 GO
 CREATE TABLE [Role] (
 	id int identity primary key,
 	description char(2),
+	isDelete bit,
 )
 GO
 CREATE TABLE [User] (
@@ -82,12 +92,14 @@ CREATE TABLE [User] (
 	username varchar(20),
 	password varchar(20),
 	roleId int,
+	isDelete bit,
 )
 GO
 CREATE TABLE [UnitManager] (
 	id int identity primary key,
 	userId int,
 	unitId int,
+	isDelete bit,
 )
 GO
 
@@ -134,8 +146,8 @@ INSERT INTO [Ammo] (name, price, weight) VALUES
 
 -- Insert data into [Role] table
 INSERT INTO [Role] (description) VALUES
-    ('ad'),
-    ('us');
+    ('us'),
+    ('ad');
 
 -- Insert data into [User] table
 INSERT INTO [User] (username, password, roleId) VALUES
