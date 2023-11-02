@@ -151,10 +151,10 @@ INSERT INTO [Role] (description) VALUES
 
 -- Insert data into [User] table
 INSERT INTO [User] (username, password, roleId) VALUES
-    ('unit1', 'unit1', 2),
-    ('unit2', 'unit2', 2),
-    ('unit3', 'unit3', 2),
-	('admin', 'admin', 1);
+    ('unit1', 'unit1', 1),
+    ('unit2', 'unit2', 1),
+    ('unit3', 'unit3', 1),
+	('admin', 'admin', 2);
 
 -- Insert data into [Unit] table
 INSERT INTO [Unit] (name, location) VALUES

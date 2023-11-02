@@ -1,4 +1,5 @@
-﻿using Data.Repository;
+﻿using Data.Models;
+using Data.Repository;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -17,15 +18,36 @@ namespace Tank_Management {
         public UnitRepository unitRepository = new UnitRepository();
         public LocationRepository locationRepository = new LocationRepository();
         public HistoryRepository historyRepository = new HistoryRepository();
+        public UnitManagerRepository unitManagerRepository = new UnitManagerRepository();
+        private Unit currentUnit = null;
 
         private int unitId = 0;
+        private void setCurrentUnit() {
+            var unit = unitManagerRepository.GetAll()
+                 .Where(um => um.UserId == Program.user.Id)
+                 .Select(um => um.Unit)
+                 .FirstOrDefault();
+
+            currentUnit = unit;
+        }
 
         public void updateGridView() {
-            var histories = historyRepository.GetAll().
-                Include(p => p.FromUnit).
-                Include(p => p.ToUnit).
-                Include(p => p.Tank).
-                ToList();
+            var histories = new List<History>();
+
+            if (Program.user.RoleId == 1) {
+                histories = historyRepository.GetAll().Where(p => p.FromUnit.Id == currentUnit.Id || p.ToUnit.Id == currentUnit.Id).
+                   Include(p => p.FromUnit).
+                   Include(p => p.ToUnit).
+                   Include(p => p.Tank).
+                   ToList();
+
+            } else {
+                histories = historyRepository.GetAll().
+                   Include(p => p.FromUnit).
+                   Include(p => p.ToUnit).
+                   Include(p => p.Tank).
+                   ToList();
+            }
 
             if (histories != null) {
                 var listHistory = histories.ToList();
@@ -46,13 +68,13 @@ namespace Tank_Management {
             lbHistory.Text = "History Table".ToUpper();
             lbHistory.Size = new Size(this.ClientSize.Width, 50);
             lbHistory.BackColor = Color.Transparent;
+            setCurrentUnit();
             updateGridView();
         }
 
         private void button1_Click(object sender, EventArgs e) {
-
             var userRole = Program.user.RoleId;
-            if (userRole == 1) {
+            if (userRole == 2) {
                 AdminDashboard adminDashboard = new AdminDashboard();
                 adminDashboard.Show();
                 this.Hide();
