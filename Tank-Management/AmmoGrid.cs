@@ -46,6 +46,7 @@ namespace Tank_Management
         private void LoadAmmo(string search = "")
         {
             var ammos = ammoRepository.GetAll()
+                .Where(a => a.IsDelete == false || a.IsDelete == null)
                 .Select(t => new AmmoData(
                  t.Id,
                  t.Name,
@@ -162,13 +163,14 @@ namespace Tank_Management
 
             //get ammo by id
             var ammo = ammoRepository.GetAll().Where(a => a.Id == id).FirstOrDefault();
-
+            
             if (ammo != null)
             {
+                ammo.IsDelete = true;
                 //delete ammo
                 try
                 {
-                    ammoRepository.Delete(ammo);
+                    ammoRepository.Update(ammo);
 
                     //reload data
                     LoadAmmo();
