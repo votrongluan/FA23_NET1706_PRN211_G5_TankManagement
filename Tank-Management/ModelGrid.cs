@@ -173,7 +173,6 @@ namespace Tank_Management
         {
             var source = new BindingSource();
             source.DataSource = _ammoRepository.GetAll()
-                .Where(x => x.IsDelete == false || x.IsDelete == null)
                 .ToList();
             cbAmmo.DataSource = source.DataSource;
             cbAmmo.DisplayMember = "Name";
