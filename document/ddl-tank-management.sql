@@ -146,8 +146,8 @@ INSERT INTO [Ammo] (name, price, weight) VALUES
 
 -- Insert data into [Role] table
 INSERT INTO [Role] (description) VALUES
-    ('us'),
-    ('ad');
+    ('ad'),
+    ('us');
 
 -- Insert data into [User] table
 INSERT INTO [User] (username, password, roleId) VALUES
