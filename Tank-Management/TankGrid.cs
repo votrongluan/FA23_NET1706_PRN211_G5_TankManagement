@@ -154,7 +154,6 @@ namespace Tank_Management
             {
                 // Display the selected row's data in TextBoxes
                 txtId.Text = dgvTank.Rows[e.RowIndex].Cells[0].Value.ToString();
-                cbModel.Text = dgvTank.Rows[e.RowIndex].Cells[1].Value.ToString();
 
                 var tank = tankRepository.GetAll().Where(t => t.Id == int.Parse(txtId.Text)).FirstOrDefault();
                 var model = modelRepository.GetAll().Where(m => m.Id == tank.ModelId).FirstOrDefault();
@@ -163,7 +162,7 @@ namespace Tank_Management
                 // Check if the Manufactory is isDelete
                 if (manufactory.IsDelete == true)
                 {
-                    txtManufactoryDepricatedName.Text = manufactory.Name + " " + "(depricated)";
+                    txtManufactoryDepricatedName.Text = manufactory.Name + " " + "(deprecated)";
                     txtManufactoryDepricatedName.Visible = true;
                 }
                 else
@@ -175,7 +174,7 @@ namespace Tank_Management
                 // Check if the Model is isDelete
                 if (model.IsDelete == true)
                 {
-                    txtModelDepricated.Text = model.Name + " " + "(depricated)";
+                    txtModelDepricated.Text = model.Name + " " + "(deprecated)";
                     txtModelDepricated.Visible = true;
                 }
                 else

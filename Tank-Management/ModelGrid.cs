@@ -101,17 +101,17 @@ namespace Tank_Management
 
             try
             {
-                var check = CheckInputs();
-                if (!check)
+                if (String.IsNullOrEmpty(txtId.Text))
                 {
-                    ControlBtnCreateOff();
+                    MessageBox.Show("Please select a row!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
                 var model = _modelRepository.GetAll().FirstOrDefault(x => x.Id == int.Parse(txtId.Text));
                 if (model != null)
                 {
-                    _modelRepository.Delete(model);
+                    model.IsDelete = true;
+                    _modelRepository.Update(model);
                 }
             }
             catch (Exception exception)
@@ -127,6 +127,7 @@ namespace Tank_Management
         private void btnReset_Click(object sender, EventArgs e)
         {
             ClearText();
+            ControlBtnCreateOn();
         }
 
         private void btnBackToDashboard_Click(object sender, EventArgs e)
@@ -151,6 +152,7 @@ namespace Tank_Management
 
             // display all comlumn exclude ammo and tank
             source.DataSource = _modelRepository.GetAll()
+                .Where(x => x.IsDelete == false || x.IsDelete == null)
                 .Include(x => x.Ammo)
                 .Select(x => new
                 {
@@ -173,6 +175,7 @@ namespace Tank_Management
         {
             var source = new BindingSource();
             source.DataSource = _ammoRepository.GetAll()
+                .Where(x => x.IsDelete == false || x.IsDelete == null)
                 .ToList();
             cbAmmo.DataSource = source.DataSource;
             cbAmmo.DisplayMember = "Name";
@@ -218,6 +221,7 @@ namespace Tank_Management
 
         private void ClearText()
         {
+            txtAmmoDepricated.Text = "";    
             txtName.Text = "";
             nudWeight.Text = "";
             nudMaxSpeed.Text = "";
@@ -231,6 +235,24 @@ namespace Tank_Management
         private void dgvListModels_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             ControlBtnCreateOff();
+
+            // Get the ammo data from the clicked row
+            int id = int.Parse(dgvListModels.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+            Model model = _modelRepository.GetAll().FirstOrDefault(x => x.Id == id);
+            Ammo ammo = _ammoRepository.GetAll().FirstOrDefault(x => x.Id == model.AmmoId);
+
+            if (ammo.IsDelete == true)
+            {
+                txtAmmoDepricated.Text = ammo.Name + " " + "(deprecated)";
+                txtAmmoDepricated.Visible = true;
+            }
+            else
+            {
+                cbAmmo.Text = dgvListModels.Rows[e.RowIndex].Cells["Ammo"].Value.ToString();
+                txtAmmoDepricated.Visible = false;
+            }
+
+
             try
             {
                 var row = dgvListModels.Rows[e.RowIndex];
@@ -240,7 +262,6 @@ namespace Tank_Management
                 nudMaxSpeed.Text = row.Cells["MaxSpeed"].Value.ToString();
                 txtDetail.Text = row.Cells["Detail"].Value.ToString();
                 nudMaxNoDriver.Text = row.Cells["MaxNoDriver"].Value.ToString();
-                cbAmmo.Text = row.Cells["Ammo"].Value.ToString();
                 nudPrice.Text = row.Cells["Price"].Value.ToString();
                 nudShootingRange.Text = row.Cells["ShootingRange"].Value.ToString();
             }
@@ -263,6 +284,11 @@ namespace Tank_Management
             if (!checkInput(nudShootingRange)) return false;
 
             return true;
+        }
+
+        private void btnResetTable_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }
