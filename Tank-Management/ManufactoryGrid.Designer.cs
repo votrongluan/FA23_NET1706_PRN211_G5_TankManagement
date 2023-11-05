@@ -1,5 +1,7 @@
-﻿namespace Tank_Management {
-    partial class ManufactoryGrid {
+﻿namespace Tank_Management
+{
+    partial class ManufactoryGrid
+    {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -9,8 +11,10 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -22,7 +26,8 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
+        private void InitializeComponent()
+        {
             label1 = new Label();
             manufactorydgv = new DataGridView();
             label2 = new Label();
@@ -49,9 +54,10 @@
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label1.AutoSize = true;
-            label1.Location = new Point(654, 132);
+            label1.Location = new Point(1063, 211);
+            label1.Margin = new Padding(5, 0, 5, 0);
             label1.Name = "label1";
-            label1.Size = new Size(22, 20);
+            label1.Size = new Size(34, 32);
             label1.TabIndex = 0;
             label1.Text = "Id";
             // 
@@ -61,12 +67,12 @@
             manufactorydgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             manufactorydgv.BackgroundColor = Color.White;
             manufactorydgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            manufactorydgv.Location = new Point(14, 131);
-            manufactorydgv.Margin = new Padding(3, 4, 3, 4);
+            manufactorydgv.Location = new Point(23, 210);
+            manufactorydgv.Margin = new Padding(5, 6, 5, 6);
             manufactorydgv.Name = "manufactorydgv";
             manufactorydgv.RowHeadersWidth = 51;
             manufactorydgv.RowTemplate.Height = 25;
-            manufactorydgv.Size = new Size(615, 417);
+            manufactorydgv.Size = new Size(999, 667);
             manufactorydgv.TabIndex = 1;
             manufactorydgv.CellDoubleClick += manufactorydgv_CellDoubleClick;
             // 
@@ -76,9 +82,10 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 25F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.ControlText;
-            label2.Location = new Point(229, 12);
+            label2.Location = new Point(372, 19);
+            label2.Margin = new Padding(5, 0, 5, 0);
             label2.Name = "label2";
-            label2.Size = new Size(518, 57);
+            label2.Size = new Size(823, 89);
             label2.TabIndex = 2;
             label2.Text = "Manufactory Management";
             // 
@@ -86,9 +93,10 @@
             // 
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label3.AutoSize = true;
-            label3.Location = new Point(654, 173);
+            label3.Location = new Point(1063, 277);
+            label3.Margin = new Padding(5, 0, 5, 0);
             label3.Name = "label3";
-            label3.Size = new Size(49, 20);
+            label3.Size = new Size(78, 32);
             label3.TabIndex = 3;
             label3.Text = "Name";
             // 
@@ -96,38 +104,39 @@
             // 
             label4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label4.AutoSize = true;
-            label4.Location = new Point(654, 215);
+            label4.Location = new Point(1063, 344);
+            label4.Margin = new Padding(5, 0, 5, 0);
             label4.Name = "label4";
-            label4.Size = new Size(66, 20);
+            label4.Size = new Size(104, 32);
             label4.TabIndex = 4;
             label4.Text = "Location";
             // 
             // idtxt
             // 
             idtxt.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            idtxt.Location = new Point(744, 128);
-            idtxt.Margin = new Padding(3, 4, 3, 4);
+            idtxt.Location = new Point(1209, 205);
+            idtxt.Margin = new Padding(5, 6, 5, 6);
             idtxt.Name = "idtxt";
             idtxt.ReadOnly = true;
-            idtxt.Size = new Size(114, 27);
+            idtxt.Size = new Size(183, 39);
             idtxt.TabIndex = 5;
             // 
             // nametxt
             // 
             nametxt.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            nametxt.Location = new Point(744, 169);
-            nametxt.Margin = new Padding(3, 4, 3, 4);
+            nametxt.Location = new Point(1209, 270);
+            nametxt.Margin = new Padding(5, 6, 5, 6);
             nametxt.Name = "nametxt";
-            nametxt.Size = new Size(114, 27);
+            nametxt.Size = new Size(183, 39);
             nametxt.TabIndex = 6;
             // 
             // btnUpdate
             // 
             btnUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnUpdate.Location = new Point(654, 293);
-            btnUpdate.Margin = new Padding(3, 4, 3, 4);
+            btnUpdate.Location = new Point(1063, 469);
+            btnUpdate.Margin = new Padding(5, 6, 5, 6);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(86, 31);
+            btnUpdate.Size = new Size(140, 50);
             btnUpdate.TabIndex = 8;
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = true;
@@ -136,10 +145,10 @@
             // btnCreate
             // 
             btnCreate.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnCreate.Location = new Point(773, 293);
-            btnCreate.Margin = new Padding(3, 4, 3, 4);
+            btnCreate.Location = new Point(1256, 469);
+            btnCreate.Margin = new Padding(5, 6, 5, 6);
             btnCreate.Name = "btnCreate";
-            btnCreate.Size = new Size(86, 31);
+            btnCreate.Size = new Size(140, 50);
             btnCreate.TabIndex = 9;
             btnCreate.Text = "Create";
             btnCreate.UseVisualStyleBackColor = true;
@@ -148,10 +157,10 @@
             // btnDelete
             // 
             btnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnDelete.Location = new Point(654, 349);
-            btnDelete.Margin = new Padding(3, 4, 3, 4);
+            btnDelete.Location = new Point(1063, 558);
+            btnDelete.Margin = new Padding(5, 6, 5, 6);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(86, 31);
+            btnDelete.Size = new Size(140, 50);
             btnDelete.TabIndex = 10;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
@@ -160,10 +169,10 @@
             // btnReset
             // 
             btnReset.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnReset.Location = new Point(773, 349);
-            btnReset.Margin = new Padding(3, 4, 3, 4);
+            btnReset.Location = new Point(1256, 558);
+            btnReset.Margin = new Padding(5, 6, 5, 6);
             btnReset.Name = "btnReset";
-            btnReset.Size = new Size(86, 31);
+            btnReset.Size = new Size(140, 50);
             btnReset.TabIndex = 11;
             btnReset.Text = "Reset";
             btnReset.UseVisualStyleBackColor = true;
@@ -172,10 +181,10 @@
             // btnResetDgv
             // 
             btnResetDgv.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnResetDgv.Location = new Point(0, 484);
-            btnResetDgv.Margin = new Padding(3, 4, 3, 4);
+            btnResetDgv.Location = new Point(0, 774);
+            btnResetDgv.Margin = new Padding(5, 6, 5, 6);
             btnResetDgv.Name = "btnResetDgv";
-            btnResetDgv.Size = new Size(129, 31);
+            btnResetDgv.Size = new Size(210, 50);
             btnResetDgv.TabIndex = 12;
             btnResetDgv.Text = "Reset Data View";
             btnResetDgv.UseVisualStyleBackColor = true;
@@ -184,20 +193,20 @@
             // searchtxt
             // 
             searchtxt.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            searchtxt.Location = new Point(62, 13);
-            searchtxt.Margin = new Padding(3, 4, 3, 4);
+            searchtxt.Location = new Point(101, 21);
+            searchtxt.Margin = new Padding(5, 6, 5, 6);
             searchtxt.Name = "searchtxt";
             searchtxt.PlaceholderText = "Find by id or model";
-            searchtxt.Size = new Size(462, 27);
+            searchtxt.Size = new Size(748, 39);
             searchtxt.TabIndex = 13;
             // 
             // btnSearch
             // 
             btnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnSearch.Location = new Point(530, 13);
-            btnSearch.Margin = new Padding(3, 4, 3, 4);
+            btnSearch.Location = new Point(861, 21);
+            btnSearch.Margin = new Padding(5, 6, 5, 6);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(85, 31);
+            btnSearch.Size = new Size(138, 50);
             btnSearch.TabIndex = 14;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = true;
@@ -206,9 +215,10 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(3, 16);
+            label5.Location = new Point(5, 26);
+            label5.Margin = new Padding(5, 0, 5, 0);
             label5.Name = "label5";
-            label5.Size = new Size(53, 20);
+            label5.Size = new Size(85, 32);
             label5.TabIndex = 15;
             label5.Text = "Search";
             // 
@@ -216,20 +226,20 @@
             // 
             locationcbx.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             locationcbx.FormattingEnabled = true;
-            locationcbx.Location = new Point(744, 211);
-            locationcbx.Margin = new Padding(3, 4, 3, 4);
+            locationcbx.Location = new Point(1209, 338);
+            locationcbx.Margin = new Padding(5, 6, 5, 6);
             locationcbx.Name = "locationcbx";
-            locationcbx.Size = new Size(114, 28);
+            locationcbx.Size = new Size(183, 40);
             locationcbx.TabIndex = 16;
             // 
             // btnBack
             // 
             btnBack.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnBack.BackColor = Color.FromArgb(255, 255, 192);
-            btnBack.Location = new Point(712, 552);
-            btnBack.Margin = new Padding(3, 4, 3, 4);
+            btnBack.Location = new Point(1157, 883);
+            btnBack.Margin = new Padding(5, 6, 5, 6);
             btnBack.Name = "btnBack";
-            btnBack.Size = new Size(147, 35);
+            btnBack.Size = new Size(239, 56);
             btnBack.TabIndex = 17;
             btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = false;
@@ -242,16 +252,17 @@
             panel1.Controls.Add(label5);
             panel1.Controls.Add(btnSearch);
             panel1.Controls.Add(searchtxt);
-            panel1.Location = new Point(14, 72);
+            panel1.Location = new Point(23, 115);
+            panel1.Margin = new Padding(5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(618, 515);
+            panel1.Size = new Size(1004, 824);
             panel1.TabIndex = 18;
             // 
             // ManufactoryGrid
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(1485, 960);
             Controls.Add(btnBack);
             Controls.Add(locationcbx);
             Controls.Add(btnReset);
@@ -266,7 +277,7 @@
             Controls.Add(manufactorydgv);
             Controls.Add(label1);
             Controls.Add(panel1);
-            Margin = new Padding(3, 4, 3, 4);
+            Margin = new Padding(5, 6, 5, 6);
             Name = "ManufactoryGrid";
             Text = "ManufactoryGrid";
             ((System.ComponentModel.ISupportInitialize)manufactorydgv).EndInit();

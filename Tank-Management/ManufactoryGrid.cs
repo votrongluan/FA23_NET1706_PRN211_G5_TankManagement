@@ -12,36 +12,43 @@ using System.Web;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
-namespace Tank_Management {
-    public partial class ManufactoryGrid : Form {
+namespace Tank_Management
+{
+    public partial class ManufactoryGrid : Form
+    {
         private ManufactoryRepository manufactoryRepository = new ManufactoryRepository();
         private LocationRepository locationRepository = new LocationRepository();
 
         internal record ManufactoryData(int Id, string Name, string locationId);
-        private void disableCreate() {
+        private void disableCreate()
+        {
             btnCreate.Enabled = false;
             btnDelete.Enabled = true;
             btnUpdate.Enabled = true;
         }
-        private void enableCreate() {
+        private void enableCreate()
+        {
             btnCreate.Enabled = true;
             btnDelete.Enabled = false;
             btnUpdate.Enabled = false;
         }
-        public ManufactoryGrid() {
+        public ManufactoryGrid()
+        {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
 
             LoadLocation();
             LoadManufactory();
         }
-        private void clearTextBox() {
+        private void clearTextBox()
+        {
             idtxt.Text = "";
             nametxt.Text = "";
             locationcbx.SelectedIndex = 0;
         }
 
-        public void LoadLocation() {
+        public void LoadLocation()
+        {
             locationcbx.DataSource = locationRepository.GetAll()
                 .Select(l => new { l.Id, l.Name })
                 .ToList();
@@ -50,33 +57,39 @@ namespace Tank_Management {
             locationcbx.SelectedIndex = 0;
         }
 
-        private void LoadManufactory(string search = "") {
-            var manufactories = manufactoryRepository.GetAll().
-                Select(m => new ManufactoryData
+        private void LoadManufactory(string search = "")
+        {
+            var manufactories = manufactoryRepository.GetAll()
+                .Where(m => m.IsDelete == false || m.IsDelete == null)
+                .Select(m => new ManufactoryData
                 (
                     m.Id,
                     m.Name,
                     m.Location.Name
                 )).ToList();
 
-            if (!string.IsNullOrEmpty(search)) {
+            if (!string.IsNullOrEmpty(search))
+            {
                 manufactories = manufactories.Where(m => m.Id.ToString().Contains(search, StringComparison.OrdinalIgnoreCase) || m.Name.Contains(search, StringComparison.OrdinalIgnoreCase))
                     .ToList();
             }
             manufactorydgv.DataSource = manufactories;
         }
 
-        private void btnCreate_Click(object sender, EventArgs e) {
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
             var id = idtxt.Text;
             var name = nametxt.Text;
             var locationId = int.Parse(locationcbx.SelectedValue.ToString());
 
-            if (name == "") {
+            if (name == "")
+            {
                 MessageBox.Show("Name is empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            var manufactory = new Manufactory() {
+            var manufactory = new Manufactory()
+            {
                 Name = name,
                 LocationId = locationId
             };
@@ -87,13 +100,15 @@ namespace Tank_Management {
             clearTextBox();
         }
 
-        private void btnBack_Click(object sender, EventArgs e) {
+        private void btnBack_Click(object sender, EventArgs e)
+        {
             var adminDashboard = new AdminDashboard();
             adminDashboard.Show();
             this.Hide();
         }
 
-        private void manufactorydgv_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
+        private void manufactorydgv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
             idtxt.Text = manufactorydgv.Rows[e.RowIndex].Cells[0].Value.ToString();
             nametxt.Text = manufactorydgv.Rows[e.RowIndex].Cells[1].Value.ToString();
             locationcbx.Text = manufactorydgv.Rows[e.RowIndex].Cells[2].Value.ToString();
@@ -101,41 +116,50 @@ namespace Tank_Management {
             disableCreate();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e) {
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
             var id = int.Parse(idtxt.Text);
 
             var manu = manufactoryRepository.GetAll().Where(m => m.Id == id).FirstOrDefault();
+            manu.IsDelete = true;
 
-            try {
-                manufactoryRepository.Delete(manu);
+            try
+            {
+                manufactoryRepository.Update(manu);
 
                 // Reload data
                 LoadManufactory();
                 clearTextBox();
                 enableCreate();
-            } catch (Exception) {
+            }
+            catch (Exception)
+            {
                 // Show the error message
                 MessageBox.Show("Can not delete this driver!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void btnReset_Click(object sender, EventArgs e) {
+        private void btnReset_Click(object sender, EventArgs e)
+        {
             clearTextBox();
             enableCreate();
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e) {
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
             var id = int.Parse(idtxt.Text);
             var name = nametxt.Text;
             var locationId = int.Parse(locationcbx.SelectedValue.ToString());
 
-            if (name == "") {
+            if (name == "")
+            {
                 MessageBox.Show("Name is empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             var manu = manufactoryRepository.GetAll().Where(d => d.Id == id).FirstOrDefault();
-            if (manu != null) {
+            if (manu != null)
+            {
                 // Update the driver
 
                 manu.Name = name;
@@ -151,13 +175,15 @@ namespace Tank_Management {
             }
         }
 
-        private void btnResetDgv_Click(object sender, EventArgs e) {
+        private void btnResetDgv_Click(object sender, EventArgs e)
+        {
             LoadManufactory();
             clearTextBox();
             enableCreate();
         }
 
-        private void btnSearch_Click(object sender, EventArgs e) {
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
             var search = searchtxt.Text;
             LoadManufactory(search);
         }
