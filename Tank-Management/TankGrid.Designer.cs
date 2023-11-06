@@ -248,7 +248,7 @@
             btnResetTankDgv.Name = "btnResetTankDgv";
             btnResetTankDgv.Size = new Size(219, 46);
             btnResetTankDgv.TabIndex = 62;
-            btnResetTankDgv.Text = "Reset tank data";
+            btnResetTankDgv.Text = "Reset table data";
             btnResetTankDgv.UseVisualStyleBackColor = true;
             btnResetTankDgv.Click += btnResetTankDgv_Click;
             // 

@@ -61,7 +61,7 @@
             btnResetTankDgv.Name = "btnResetTankDgv";
             btnResetTankDgv.Size = new Size(219, 46);
             btnResetTankDgv.TabIndex = 24;
-            btnResetTankDgv.Text = "Reset data";
+            btnResetTankDgv.Text = "Reset table data";
             btnResetTankDgv.UseVisualStyleBackColor = true;
             btnResetTankDgv.Click += btnResetTankDgv_Click;
             // 
@@ -280,7 +280,7 @@
             panel1.Controls.Add(btnResetTankDgv);
             panel1.Controls.Add(dgvDriver);
             panel1.Location = new Point(36, 120);
-            panel1.Margin = new Padding(5, 5, 5, 5);
+            panel1.Margin = new Padding(5);
             panel1.Name = "panel1";
             panel1.Size = new Size(1146, 749);
             panel1.TabIndex = 36;

@@ -130,7 +130,7 @@ namespace Tank_Management
             }
 
             // Check the phone with regex for phone number
-            if (!System.Text.RegularExpressions.Regex.IsMatch(phone, @"^0\d{9,10}$"))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(phone, @"^0\d{9}$"))
             {
                 MessageBox.Show("Phone is invalid", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -194,51 +194,59 @@ namespace Tank_Management
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            // Load data from TextBoxes
-            var id = int.Parse(txtId.Text);
-            var idCard = txtIdCard.Text;
-            var name = txtName.Text;
-            var phone = txtPhone.Text;
-            var unitId = int.Parse(cbxUnit.SelectedValue.ToString());
-
-            // Check the idCard with regex for indentity card
-            if (!System.Text.RegularExpressions.Regex.IsMatch(idCard, @"^\d{10,}$"))
+            try
             {
-                MessageBox.Show("Identity is invalid", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                // Load data from TextBoxes
+                var id = int.Parse(txtId.Text);
+                var idCard = txtIdCard.Text;
+                var name = txtName.Text;
+                var phone = txtPhone.Text;
+                var unitId = int.Parse(cbxUnit.SelectedValue.ToString());
+
+                // Check the idCard with regex for indentity card
+                if (!System.Text.RegularExpressions.Regex.IsMatch(idCard, @"^\d{12}$"))
+                {
+                    MessageBox.Show("Identity is invalid", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Check the phone with regex for phone number
+                if (!System.Text.RegularExpressions.Regex.IsMatch(phone, @"^0\d{9}$"))
+                {
+                    MessageBox.Show("Phone is invalid", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Check name is empty
+                if (name == "")
+                {
+                    MessageBox.Show("Name is empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Get the driver by id
+                var driver = driverRepository.GetAll().Where(d => d.Id == id).FirstOrDefault();
+                if (driver != null)
+                {
+                    // Update the driver
+                    driver.IdCard = idCard;
+                    driver.Name = name;
+                    driver.Phone = phone;
+                    driver.UnitId = unitId;
+
+                    // Update the driver
+                    driverRepository.Update(driver);
+
+                    // Reload data
+                    LoadDriver();
+                    clearTextBox();
+                    enableCreate();
+                }
             }
-
-            // Check the phone with regex for phone number
-            if (!System.Text.RegularExpressions.Regex.IsMatch(phone, @"^0\d{9,10}$"))
+            catch
             {
-                MessageBox.Show("Phone is invalid", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Check name is empty
-            if (name == "")
-            {
-                MessageBox.Show("Name is empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Get the driver by id
-            var driver = driverRepository.GetAll().Where(d => d.Id == id).FirstOrDefault();
-            if (driver != null)
-            {
-                // Update the driver
-                driver.IdCard = idCard;
-                driver.Name = name;
-                driver.Phone = phone;
-                driver.UnitId = unitId;
-
-                // Update the driver
-                driverRepository.Update(driver);
-
-                // Reload data
-                LoadDriver();
-                clearTextBox();
-                enableCreate();
+                // show the error message
+                MessageBox.Show("Can not update this driver!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

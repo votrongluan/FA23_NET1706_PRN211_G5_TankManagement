@@ -163,7 +163,7 @@ namespace Tank_Management
 
             //get ammo by id
             var ammo = ammoRepository.GetAll().Where(a => a.Id == id).FirstOrDefault();
-            
+
             if (ammo != null)
             {
                 ammo.IsDelete = true;
