@@ -186,7 +186,7 @@
             btnResetDgv.Name = "btnResetDgv";
             btnResetDgv.Size = new Size(210, 50);
             btnResetDgv.TabIndex = 12;
-            btnResetDgv.Text = "Reset Data View";
+            btnResetDgv.Text = "Reset table data";
             btnResetDgv.UseVisualStyleBackColor = true;
             btnResetDgv.Click += btnResetDgv_Click;
             // 
