@@ -141,7 +141,21 @@ namespace Tank_Management
         {
             var source = new BindingSource();
             source.DataSource = _modelRepository.GetAll()
+                .Where(x => x.IsDelete == false || x.IsDelete == null)
                 .Where(x => x.Name.Contains(txtSearch.Text) || x.Id.ToString().Contains(txtSearch.Text))
+                .Include(x => x.Ammo)
+                .Select(x => new
+                {
+                    x.Id,
+                    x.Name,
+                    x.Weight,
+                    x.MaxSpeed,
+                    x.Detail,
+                    x.MaxNoDriver,
+                    x.Price,
+                    x.ShootingRange,
+                    Ammo = x.Ammo.Name,
+                })
                 .ToList();
             dgvListModels.DataSource = source.DataSource;
         }

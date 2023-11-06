@@ -158,7 +158,7 @@
             // btnSearch
             // 
             btnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnSearch.Location = new Point(1048, 10);
+            btnSearch.Location = new Point(1048, 6);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(150, 46);
             btnSearch.TabIndex = 44;
@@ -172,7 +172,7 @@
             txtSearch.Location = new Point(96, 10);
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Find by name, price , weight";
-            txtSearch.Size = new Size(1385, 39);
+            txtSearch.Size = new Size(911, 39);
             txtSearch.TabIndex = 43;
             // 
             // label4

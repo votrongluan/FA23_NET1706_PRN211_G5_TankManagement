@@ -20,6 +20,12 @@ namespace Tank_Management {
         internal record TankData(int Id, string Model, string Manufactory);
         private Unit currentUnit = null;
 
+        private void clearText()
+        {
+            txtTankId.Text = "";
+            txtSearch.Text = "";
+        }
+
         private void setCurrentUnit() {
             var unit = unitManagerRepository.GetAll()
                  .Where(um => um.UserId == Program.user.Id)
@@ -46,10 +52,6 @@ namespace Tank_Management {
             }
 
             dgvTank.DataSource = tanks;
-
-            if (dgvTank.Rows.Count > 0) {
-                txtTankId.Text = dgvTank.Rows[0].Cells[0].Value.ToString();
-            }
         }
 
         private void LoadUnit() {
@@ -97,6 +99,7 @@ namespace Tank_Management {
                 MessageBox.Show("Change unit successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 LoadTank();
+                clearText();
             } catch (Exception) {
                 MessageBox.Show("Tank id or unit id is invalid!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
