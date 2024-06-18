@@ -121,20 +121,46 @@ Use built-in continuous integration and continuous deployment (CI/CD) pipelines 
 
 ## Screenshot
 
-![](img/login-form.png)
-_Login form_
+<div style="text-align: center;">
+    <img src="img/login-form.png" alt="Login form" style="width: 70%;"/>
+    <p><em>Login form</em></p>
+</div>
 
-![](img/admin-dashboard.png)
-_Admin dashboard_
+<hr/>
+<br/>
 
-![](img/manage-model.png)
-_Model management_
+<div style="text-align: center;">
+    <img src="img/admin-dashboard.png" alt="Admin dashboard" style="width: 70%;"/>
+    <p><em>Admin dashboard</em></p>
+</div>
 
-![](img/manage-tank.png)
-_Tank management_
+<hr/>
+<br/>
 
-![](img/change-unit.png)
-_Change unit_
+<div style="text-align: center;">
+    <img src="img/manage-model.png" alt="Model management" style="width: 70%;"/>
+    <p><em>Model management</em></p>
+</div>
+
+<hr/>
+<br/>
+
+<div style="text-align: center;">
+    <img src="img/manage-tank.png" alt="Tank management" style="width: 70%;"/>
+    <p><em>Tank management</em></p>
+</div>
+
+<hr/>
+<br/>
+
+<div style="text-align: center;">
+    <img src="img/change-unit.png" alt="Change unit" style="width: 70%;"/>
+    <p><em>Change unit</em></p>
+</div>
+
+<hr/>
+<br/>
+
 
 ## Support
 
