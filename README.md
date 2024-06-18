@@ -102,7 +102,7 @@ We use a Git branching strategy with three main branches:
 
 5. After thorough testing, create a pull request from `test` to `dev`.
 
-6. For releases, create a pull request from `dev` to `master`.
+6. For releases, create a pull request from `dev` to `main`.
 
 ### Inviting Collaborators
 
