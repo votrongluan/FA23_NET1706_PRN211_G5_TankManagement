@@ -67,7 +67,7 @@ To collaborate within the team without forking, follow these steps:
 
 We use a Git branching strategy with three main branches:
 
-- `master`: Contains the stable version of the code. Direct commits to this branch are restricted.
+- `main`: Contains the stable version of the code. Direct commits to this branch are restricted.
 - `dev`: Contains the latest development changes. This is the main branch for ongoing development.
 - `test`: Contains code that is under testing before being merged into `dev`.
 
