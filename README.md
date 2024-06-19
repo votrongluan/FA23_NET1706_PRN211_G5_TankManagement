@@ -119,7 +119,7 @@ Use built-in continuous integration and continuous deployment (CI/CD) pipelines 
 - Analyze your code for vulnerabilities with Static Application Security Testing (SAST).
 - Deploy to your preferred cloud service.
 
-## Screenshot
+## Screenshots
 
 <div style="text-align: center;">
     <img src="img/login-form.png" alt="Login form" style="width: 70%;"/>
