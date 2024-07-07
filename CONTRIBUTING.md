@@ -9,13 +9,13 @@ This project is no longer actively maintained. However, you are welcome to clone
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-repo/project.git
+   git clone https://github.com/votrongluan/tank-management-winform
    ```
 
 2. **Navigate into the project directory:**
 
    ```bash
-   cd project
+   cd tank-management-winform
    ```
 
 ### Branching Strategy (Recommended)
